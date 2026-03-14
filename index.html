@@ -216,158 +216,53 @@ section{position:relative;z-index:1}
 .hero-layout{display:grid;grid-template-columns:1fr 300px;gap:1.6rem;align-items:start}
 @media(max-width:960px){.hero-layout{grid-template-columns:1fr}.player-col{display:none}}
 
-/* ── PLAYER — новый дизайн ── */
+/* ── PONG ── */
 .player-col{animation:fu .5s .22s ease both;display:flex;flex-direction:column}
-.player-card{
-  background:var(--surface);
-  border:1px solid var(--b2);
+.pong-card{
+  background:var(--surface);border:1px solid var(--b2);
   border-radius:14px;overflow:hidden;
   box-shadow:0 0 40px rgba(123,97,255,.07),0 20px 40px rgba(0,0,0,.45);
-  transition:border-color .3s,box-shadow .3s;
 }
-.player-card.is-playing{
-  border-color:rgba(123,97,255,.28);
-  box-shadow:0 0 40px rgba(123,97,255,.13),0 20px 40px rgba(0,0,0,.45);
+.pong-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 1.1rem;border-bottom:1px solid var(--b2);
+  background:var(--surface2);user-select:none;
 }
-
-/* header: обложка + мета */
-.p-head{
-  display:flex;align-items:center;gap:.9rem;
-  padding:1rem 1.1rem .8rem;
-  border-bottom:1px solid var(--b2);
+.pong-title{font-size:.62rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-family:var(--fm)}
+.pong-scores{display:flex;align-items:center;gap:.6rem;font-family:var(--fu);font-size:.75rem;font-weight:700}
+.pong-score-you{color:var(--accent)}
+.pong-score-sep{color:var(--muted);font-size:.6rem}
+.pong-score-ai{color:var(--pink)}
+.pong-field{
+  position:relative;width:100%;background:#080a10;
+  cursor:none;
 }
-.p-album{
-  width:52px;height:52px;border-radius:8px;flex-shrink:0;
-  background:linear-gradient(145deg,#1e0a3e 0%,#0a1a28 60%,#0a1a10 100%);
-  position:relative;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
+#pong-canvas{display:block;width:100%;height:auto}
+.pong-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.6rem;background:rgba(8,10,16,.75);backdrop-filter:blur(4px);
 }
-.p-album-vinyl{
-  width:36px;height:36px;border-radius:50%;
-  background:conic-gradient(
-    #1a0a2e 0deg, #111 20deg, #1a1a1a 40deg, #111 60deg,
-    #222 90deg, #111 110deg, #1a1a1a 130deg, #111 180deg,
-    #222 210deg, #111 240deg, #1a1a1a 270deg, #111 300deg, #222 330deg, #111 360deg
-  );
-  box-shadow:0 0 0 1px #333, 0 0 12px rgba(0,0,0,.7);
-}
-.player-card.is-playing .p-album-vinyl{animation:vinyl-spin 3s linear infinite}
-.p-album-dot{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:8px;height:8px;border-radius:50%;
-  background:radial-gradient(circle,var(--accent),#3a1a6a);
-  box-shadow:0 0 4px var(--accent);
-}
-.p-meta{flex:1;min-width:0}
-.p-meta-label{
-  font-size:.53rem;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--green);display:flex;align-items:center;gap:.35rem;margin-bottom:.25rem;
-}
-.p-meta-dot{
-  width:4px;height:4px;border-radius:50%;
-  background:var(--green);box-shadow:0 0 4px var(--green);
-  animation:pulse 1.4s ease-in-out infinite;
-}
-.player-card:not(.is-playing) .p-meta-label{color:var(--muted)}
-.player-card:not(.is-playing) .p-meta-dot{background:var(--muted);box-shadow:none;animation:none}
-.p-meta-title{
-  font-family:var(--fu);font-size:.78rem;font-weight:700;
-  color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  letter-spacing:-.01em;margin-bottom:.1rem;
-}
-.p-meta-artist{font-size:.6rem;color:var(--muted)}
-
-/* progress */
-.p-prog-area{padding:.6rem 1.1rem .4rem}
-.p-prog-bar{
-  height:3px;background:var(--b2);border-radius:2px;
-  position:relative;cursor:pointer;overflow:visible;
-  border:1px solid var(--border);
-}
-.p-prog-fill{
-  height:100%;border-radius:2px;
-  background:linear-gradient(90deg,var(--accent),var(--pink));
-  position:relative;transition:width .4s linear;
-}
-.p-prog-fill::after{
-  content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);
-  width:10px;height:10px;border-radius:50%;
-  background:#fff;border:2px solid var(--accent);
-  box-shadow:0 0 7px var(--accent);
-  opacity:0;transition:opacity .2s;
-}
-.p-prog-bar:hover .p-prog-fill::after{opacity:1}
-.p-times{
-  display:flex;justify-content:space-between;
-  font-size:.57rem;color:var(--muted);margin-top:.3rem;
-}
-
-/* controls */
-.p-controls{
-  display:flex;align-items:center;justify-content:center;
-  gap:.3rem;padding:.4rem 1.1rem .7rem;
-}
-.p-ctrl{
-  background:none;border:none;cursor:pointer;
-  color:var(--muted);display:flex;align-items:center;justify-content:center;
-  width:30px;height:30px;border-radius:7px;
-  font-size:.85rem;transition:color .2s,background .2s,transform .15s;
-}
-.p-ctrl:hover{color:var(--text);background:rgba(255,255,255,.05);transform:scale(1.12)}
-.p-ctrl.main{
-  width:40px;height:40px;border-radius:50%;
+.pong-overlay.hidden{display:none}
+.pong-overlay-title{font-family:var(--fu);font-size:.8rem;font-weight:700;color:var(--text)}
+.pong-overlay-sub{font-size:.62rem;color:var(--muted);letter-spacing:.08em}
+.pong-start-btn{
+  margin-top:.3rem;
   background:linear-gradient(135deg,var(--accent),var(--accent2));
-  color:#fff;font-size:.95rem;
-  box-shadow:0 0 16px rgba(123,97,255,.38);
+  color:#fff;border:none;border-radius:6px;
+  font-family:var(--fm);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.6rem 1.4rem;cursor:pointer;
+  box-shadow:0 0 16px rgba(123,97,255,.4);
   transition:box-shadow .2s,transform .15s;
-  margin:0 .3rem;
 }
-.p-ctrl.main:hover{box-shadow:0 0 26px rgba(123,97,255,.65);transform:scale(1.07)}
-
-/* volume row */
-.p-vol{
-  display:flex;align-items:center;gap:.5rem;
-  padding:0 1.1rem .75rem;
+.pong-start-btn:hover{box-shadow:0 0 28px rgba(123,97,255,.65);transform:scale(1.04)}
+.pong-hint{
+  padding:.5rem 1.1rem .65rem;
+  font-size:.58rem;color:var(--muted);text-align:center;letter-spacing:.04em;
+  border-top:1px solid var(--b2);background:var(--surface2);
 }
-.p-vol-ic{font-size:.68rem;color:var(--muted);flex-shrink:0}
-.p-vol-sl{
-  flex:1;-webkit-appearance:none;appearance:none;
-  height:3px;background:var(--b2);border-radius:2px;outline:none;cursor:pointer;
-  border:1px solid var(--border);
-}
-.p-vol-sl::-webkit-slider-thumb{
-  -webkit-appearance:none;width:10px;height:10px;border-radius:50%;
-  background:var(--accent);cursor:pointer;box-shadow:0 0 4px rgba(123,97,255,.5);
-}
-
-/* track list */
-.p-tracklist-full{
-  border-top:1px solid var(--b2);
-}
-.p-trow{
-  display:flex;align-items:center;gap:.7rem;
-  padding:.6rem 1.1rem;
-  cursor:pointer;transition:background .18s;
-  position:relative;
-}
-.p-trow::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:var(--accent);opacity:0;transition:opacity .2s;
-}
-.p-trow:hover{background:rgba(255,255,255,.03)}
-.p-trow.active{background:rgba(123,97,255,.06)}
-.p-trow.active::before{opacity:1}
-.p-trow-num{
-  font-size:.6rem;color:var(--muted);width:16px;text-align:center;flex-shrink:0;
-}
-.p-trow.active .p-trow-num{color:var(--accent)}
-.p-trow-info{flex:1;min-width:0}
-.p-trow-name{font-size:.72rem;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.p-trow.active .p-trow-name{color:var(--accent)}
-.p-trow-dur{font-size:.58rem;color:var(--muted);flex-shrink:0}
 
 @keyframes vinyl-spin{to{transform:rotate(360deg)}}
-
 /* ─────────── */
 .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2.5rem;animation:fu .5s .24s ease both}
 .term-cta{
@@ -588,66 +483,26 @@ footer{border-top:1px solid var(--b2);padding:1.8rem 3rem;display:flex;align-ite
         </div>
       </div>
 
-      <!-- RIGHT: player -->
+      <!-- RIGHT: pong -->
       <div class="player-col">
-        <div class="player-card" id="player-card">
-
-          <!-- header: мини-обложка + мета + статус -->
-          <div class="p-head">
-            <div class="p-album">
-              <div class="p-album-vinyl" id="p-vinyl"></div>
-              <div class="p-album-dot"></div>
-            </div>
-            <div class="p-meta">
-              <div class="p-meta-label"><div class="p-meta-dot"></div>сейчас играет</div>
-              <div class="p-meta-title" id="p-title">Звезда по имени Солнце</div>
-              <div class="p-meta-artist">Кино · В. Цой</div>
+        <div class="pong-card" id="pong-card">
+          <div class="pong-header">
+            <span class="pong-title">pong.exe</span>
+            <div class="pong-scores">
+              <span class="pong-score-you" id="score-you">0</span>
+              <span class="pong-score-sep">:</span>
+              <span class="pong-score-ai" id="score-ai">0</span>
             </div>
           </div>
-
-          <!-- progress -->
-          <div class="p-prog-area">
-            <div class="p-prog-bar" id="p-prog-wrap">
-              <div class="p-prog-fill" id="p-prog-fill" style="width:0%"></div>
-            </div>
-            <div class="p-times">
-              <span id="p-cur">0:00</span>
-              <span id="p-dur">3:52</span>
+          <div class="pong-field">
+            <canvas id="pong-canvas" width="300" height="220"></canvas>
+            <div class="pong-overlay" id="pong-overlay">
+              <div class="pong-overlay-title">PONG</div>
+              <div class="pong-overlay-sub">нажми чтобы играть</div>
+              <button class="pong-start-btn" id="pong-start">▶ Старт</button>
             </div>
           </div>
-
-          <!-- controls -->
-          <div class="p-controls">
-            <button class="p-ctrl" id="p-prev">⏮</button>
-            <button class="p-ctrl main" id="p-play">▶</button>
-            <button class="p-ctrl" id="p-next">⏭</button>
-          </div>
-
-          <!-- volume -->
-          <div class="p-vol">
-            <span class="p-vol-ic">🔈</span>
-            <input class="p-vol-sl" id="p-vol" type="range" min="0" max="1" step="0.01" value="0.7">
-            <span class="p-vol-ic">🔊</span>
-          </div>
-
-          <!-- tracklist -->
-          <div class="p-tracklist-full" id="p-tracklist-full">
-            <div class="p-trow active" data-i="0">
-              <span class="p-trow-num">01</span>
-              <div class="p-trow-info"><div class="p-trow-name">Звезда по имени Солнце</div></div>
-              <span class="p-trow-dur">3:52</span>
-            </div>
-            <div class="p-trow" data-i="1">
-              <span class="p-trow-num">02</span>
-              <div class="p-trow-info"><div class="p-trow-name">Группа крови</div></div>
-              <span class="p-trow-dur">3:34</span>
-            </div>
-            <div class="p-trow" data-i="2">
-              <span class="p-trow-num">03</span>
-              <div class="p-trow-info"><div class="p-trow-name">Пачка сигарет</div></div>
-              <span class="p-trow-dur">3:41</span>
-            </div>
-          </div>
+          <div class="pong-hint" id="pong-hint">мышь / тач — управление ракеткой</div>
         </div>
       </div>
   </div>
@@ -1051,74 +906,218 @@ ndClose.addEventListener('click',closeDrawer);
   draw();
 })();
 
-// ── PLAYER ──────────────────────────────────────────────
+// ── PONG ────────────────────────────────────────────────
 (function(){
-  const TRACKS = [
-    { title:'Звезда по имени Солнце', src:'audio/zvezda-po-imeni-solnce.mp3', dur:232 },
-    { title:'Группа крови',           src:'audio/gruppa-krovi.mp3',           dur:214 },
-    { title:'Пачка сигарет',          src:'audio/pachka-sigaret.mp3',         dur:221 },
-  ];
+  const canvas  = document.getElementById('pong-canvas');
+  const ctx     = canvas.getContext('2d');
+  const overlay = document.getElementById('pong-overlay');
+  const startBtn= document.getElementById('pong-start');
+  const scoreYouEl = document.getElementById('score-you');
+  const scoreAiEl  = document.getElementById('score-ai');
+  const hint       = document.getElementById('pong-hint');
 
-  const card     = document.getElementById('player-card');
-  const vinyl    = document.getElementById('p-vinyl');
-  const titleEl  = document.getElementById('p-title');
-  const curEl    = document.getElementById('p-cur');
-  const durEl    = document.getElementById('p-dur');
-  const fillEl   = document.getElementById('p-prog-fill');
-  const progWrap = document.getElementById('p-prog-wrap');
-  const playBtn  = document.getElementById('p-play');
-  const prevBtn  = document.getElementById('p-prev');
-  const nextBtn  = document.getElementById('p-next');
-  const volSl    = document.getElementById('p-vol');
-  const rows     = document.querySelectorAll('.p-trow');
+  const W = canvas.width, H = canvas.height;
+  const PAD_W = 8, PAD_H = 48, PAD_MARGIN = 8;
+  const BALL_R = 5;
 
-  let idx = 0, playing = false;
-  const audio = new Audio();
-  audio.volume = 0.7;
+  // Colors matching site accent
+  const COL_BG     = '#080a10';
+  const COL_NET    = 'rgba(123,97,255,.15)';
+  const COL_BALL   = '#ffffff';
+  const COL_YOU    = '#7b61ff';
+  const COL_AI     = '#ff61c3';
+  const COL_GLOW_Y = 'rgba(123,97,255,.5)';
+  const COL_GLOW_A = 'rgba(255,97,195,.5)';
+  const COL_TRAIL  = 'rgba(123,97,255,.18)';
 
-  const fmt = s => { const m=Math.floor(s/60); return m+':'+(String(Math.floor(s%60)).padStart(2,'0')); };
+  let running = false;
+  let scoreYou = 0, scoreAi = 0;
 
-  function loadTrack(i, autoplay){
-    idx = (i + TRACKS.length) % TRACKS.length;
-    const t = TRACKS[idx];
-    titleEl.textContent = t.title;
-    durEl.textContent = fmt(t.dur);
-    fillEl.style.width = '0%';
-    curEl.textContent = '0:00';
-    audio.src = t.src;
-    rows.forEach(r => r.classList.toggle('active', +r.dataset.i === idx));
-    if(autoplay){ audio.play().catch(()=>{}); setPlaying(true); }
+  const state = {
+    ballX: W/2, ballY: H/2,
+    bvx: 0, bvy: 0,
+    padY: H/2 - PAD_H/2,       // player (left)
+    aiY:  H/2 - PAD_H/2,       // ai (right)
+    trail: [],
+  };
+
+  function resetBall(dir = 1) {
+    state.ballX = W/2; state.ballY = H/2;
+    const ang = (Math.random() * 0.6 - 0.3);
+    const spd = 3.2;
+    state.bvx = dir * spd * Math.cos(ang);
+    state.bvy = spd * Math.sin(ang);
+    state.trail = [];
   }
 
-  function setPlaying(state){
-    playing = state;
-    playBtn.textContent = playing ? '⏸' : '▶';
-    card.classList.toggle('is-playing', playing);
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  // player control — mouse & touch
+  const field = canvas.parentElement;
+  field.addEventListener('mousemove', e => {
+    if(!running) return;
+    const r = canvas.getBoundingClientRect();
+    const scaleY = H / r.height;
+    const y = (e.clientY - r.top) * scaleY;
+    state.padY = clamp(y - PAD_H/2, 0, H - PAD_H);
+  });
+  field.addEventListener('touchmove', e => {
+    if(!running) return;
+    e.preventDefault();
+    const r = canvas.getBoundingClientRect();
+    const scaleY = H / r.height;
+    const y = (e.touches[0].clientY - r.top) * scaleY;
+    state.padY = clamp(y - PAD_H/2, 0, H - PAD_H);
+  }, {passive: false});
+
+  function update() {
+    const s = state;
+
+    // AI follows ball (with lag)
+    const aiCenter = s.aiY + PAD_H/2;
+    const aiSpeed = 2.6;
+    if(aiCenter < s.ballY - 4)      s.aiY += aiSpeed;
+    else if(aiCenter > s.ballY + 4) s.aiY -= aiSpeed;
+    s.aiY = clamp(s.aiY, 0, H - PAD_H);
+
+    // move ball
+    s.trail.push({x: s.ballX, y: s.ballY});
+    if(s.trail.length > 10) s.trail.shift();
+    s.ballX += s.bvx;
+    s.ballY += s.bvy;
+
+    // wall bounce top/bottom
+    if(s.ballY - BALL_R <= 0){ s.ballY = BALL_R; s.bvy = Math.abs(s.bvy); }
+    if(s.ballY + BALL_R >= H){ s.ballY = H - BALL_R; s.bvy = -Math.abs(s.bvy); }
+
+    // player paddle (left)
+    const lx = PAD_MARGIN + PAD_W;
+    if(s.ballX - BALL_R <= lx && s.ballX - BALL_R >= lx - 6 &&
+       s.ballY >= s.padY && s.ballY <= s.padY + PAD_H){
+      s.ballX = lx + BALL_R;
+      const hit = (s.ballY - (s.padY + PAD_H/2)) / (PAD_H/2);
+      const spd = Math.min(Math.hypot(s.bvx, s.bvy) + 0.15, 7);
+      const ang = hit * 0.9;
+      s.bvx =  spd * Math.cos(ang);
+      s.bvy =  spd * Math.sin(ang);
+    }
+
+    // ai paddle (right)
+    const rx = W - PAD_MARGIN - PAD_W;
+    if(s.ballX + BALL_R >= rx && s.ballX + BALL_R <= rx + 6 &&
+       s.ballY >= s.aiY && s.ballY <= s.aiY + PAD_H){
+      s.ballX = rx - BALL_R;
+      const hit = (s.ballY - (s.aiY + PAD_H/2)) / (PAD_H/2);
+      const spd = Math.min(Math.hypot(s.bvx, s.bvy) + 0.1, 7);
+      const ang = hit * 0.9;
+      s.bvx = -spd * Math.cos(ang);
+      s.bvy =  spd * Math.sin(ang);
+    }
+
+    // score
+    if(s.ballX < 0){
+      scoreAi++;
+      scoreAiEl.textContent = scoreAi;
+      resetBall(1);
+      if(scoreAi >= 7) endGame(false);
+    }
+    if(s.ballX > W){
+      scoreYou++;
+      scoreYouEl.textContent = scoreYou;
+      resetBall(-1);
+      if(scoreYou >= 7) endGame(true);
+    }
   }
 
-  playBtn.addEventListener('click', ()=>{
-    if(playing){ audio.pause(); setPlaying(false); }
-    else { audio.play().catch(()=>{}); setPlaying(true); }
-  });
-  prevBtn.addEventListener('click', ()=> loadTrack(idx-1, playing));
-  nextBtn.addEventListener('click', ()=> loadTrack(idx+1, playing));
-  rows.forEach(r => r.addEventListener('click', ()=> loadTrack(+r.dataset.i, playing)));
+  function draw() {
+    const s = state;
 
-  audio.addEventListener('timeupdate', ()=>{
-    const dur = audio.duration || TRACKS[idx].dur;
-    fillEl.style.width = (audio.currentTime / dur * 100) + '%';
-    curEl.textContent = fmt(audio.currentTime);
-  });
-  audio.addEventListener('ended', ()=> loadTrack(idx+1, true));
+    // bg
+    ctx.fillStyle = COL_BG;
+    ctx.fillRect(0, 0, W, H);
 
-  progWrap.addEventListener('click', e=>{
-    const r = progWrap.getBoundingClientRect();
-    audio.currentTime = ((e.clientX - r.left) / r.width) * (audio.duration || TRACKS[idx].dur);
-  });
+    // net dashes
+    ctx.setLineDash([6, 6]);
+    ctx.strokeStyle = COL_NET;
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(W/2, 0); ctx.lineTo(W/2, H); ctx.stroke();
+    ctx.setLineDash([]);
 
-  volSl.addEventListener('input', ()=>{ audio.volume = +volSl.value; });
+    // trail
+    s.trail.forEach((p, i) => {
+      const a = (i / s.trail.length) * 0.35;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, BALL_R * (i / s.trail.length), 0, Math.PI*2);
+      ctx.fillStyle = `rgba(123,97,255,${a})`;
+      ctx.fill();
+    });
 
-  loadTrack(0, false);
+    // ball glow
+    const grd = ctx.createRadialGradient(s.ballX, s.ballY, 0, s.ballX, s.ballY, BALL_R*3);
+    grd.addColorStop(0, 'rgba(255,255,255,.4)');
+    grd.addColorStop(1, 'transparent');
+    ctx.fillStyle = grd;
+    ctx.beginPath(); ctx.arc(s.ballX, s.ballY, BALL_R*3, 0, Math.PI*2); ctx.fill();
+
+    // ball
+    ctx.beginPath();
+    ctx.arc(s.ballX, s.ballY, BALL_R, 0, Math.PI*2);
+    ctx.fillStyle = COL_BALL;
+    ctx.fill();
+
+    // player paddle (left) — gradient + glow
+    const pgrd = ctx.createLinearGradient(PAD_MARGIN, 0, PAD_MARGIN+PAD_W, 0);
+    pgrd.addColorStop(0, '#5b41df'); pgrd.addColorStop(1, '#7b61ff');
+    ctx.shadowColor = COL_GLOW_Y; ctx.shadowBlur = 10;
+    ctx.fillStyle = pgrd;
+    ctx.beginPath();
+    ctx.roundRect(PAD_MARGIN, s.padY, PAD_W, PAD_H, 3);
+    ctx.fill();
+
+    // ai paddle (right) — pink
+    const agrd = ctx.createLinearGradient(W-PAD_MARGIN-PAD_W, 0, W-PAD_MARGIN, 0);
+    agrd.addColorStop(0, '#ff61c3'); agrd.addColorStop(1, '#d42090');
+    ctx.shadowColor = COL_GLOW_A; ctx.shadowBlur = 10;
+    ctx.fillStyle = agrd;
+    ctx.beginPath();
+    ctx.roundRect(W - PAD_MARGIN - PAD_W, s.aiY, PAD_W, PAD_H, 3);
+    ctx.fill();
+
+    ctx.shadowBlur = 0;
+  }
+
+  function endGame(won) {
+    running = false;
+    overlay.classList.remove('hidden');
+    overlay.querySelector('.pong-overlay-title').textContent = won ? '🏆 Победа!' : '💀 Поражение';
+    overlay.querySelector('.pong-overlay-sub').textContent = `${scoreYou} : ${scoreAi} · сыграть ещё?`;
+    startBtn.textContent = '↺ Реванш';
+  }
+
+  function startGame() {
+    scoreYou = 0; scoreAi = 0;
+    scoreYouEl.textContent = '0'; scoreAiEl.textContent = '0';
+    state.padY = H/2 - PAD_H/2; state.aiY = H/2 - PAD_H/2;
+    resetBall(Math.random() > .5 ? 1 : -1);
+    overlay.classList.add('hidden');
+    running = true;
+    hint.textContent = 'до 7 очков · двигай мышь';
+    loop();
+  }
+
+  startBtn.addEventListener('click', startGame);
+
+  // init idle draw
+  (function idle(){
+    draw();
+    if(!running) requestAnimationFrame(idle);
+  })();
+
+  function loop(){
+    if(!running) return;
+    update(); draw();
+    requestAnimationFrame(loop);
+  }
 })();
 
 // ── REVEAL ──────────────────────────────────────────────
