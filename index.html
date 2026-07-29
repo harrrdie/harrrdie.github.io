@@ -40,54 +40,8 @@
   --fm:'IBM Plex Mono',monospace;
   --fu:'Plus Jakarta Sans',system-ui,sans-serif;
   --fs:'Instrument Serif',Georgia,serif;
+  --ip-wallpaper:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22220%22%20height%3D%22220%22%20viewBox%3D%220%200%20220%20220%22%3E%0A%3Cg%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20opacity%3D%220.16%22%3E%0A%20%20%3Cpath%20d%3D%22M18%2026%2046%2014%2040%2040%2032%2033%2024%2042Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M100%2020c-9%200-13%208-13%2013%200%209%2013%2020%2013%2020s13-11%2013-20c0-5-4-13-13-13Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M150%2030v22a5%205%200%201%201-3-4.6V33h9v-3Z%22/%3E%0A%20%20%3Cpath%20d%3D%22m190%2018%202.4%206.8L199%2027l-6.6%202.2L190%2036l-2.4-6.8L181%2027l6.6-2.2Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M28%2090h20a5%205%200%200%201%205%205v14a5%205%200%200%201-5%205H30l-6%206v-6a5%205%200%200%201-5-5V95a5%205%200%200%201%205-5Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M100%2092h18v13l-6-4h-12a4%204%200%200%201-4-4v-1a4%204%200%200%201%204-4Z%22/%3E%0A%20%20%3Ccircle%20cx%3D%22165%22%20cy%3D%22100%22%20r%3D%2212%22/%3E%0A%20%20%3Cpath%20d%3D%22M158%20100a7%207%200%200%201%2014%200%22%20stroke-width%3D%221.4%22/%3E%0A%20%20%3Crect%20x%3D%22150%22%20y%3D%2290%22%20width%3D%2230%22%20height%3D%2220%22%20rx%3D%223%22/%3E%0A%20%20%3Cpath%20d%3D%22M20%20150%2038%20140%2033%20160%2026%20154%2020%20162Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M95%20145c-7%200-10%206-10%2010%200%207%2010%2015%2010%2015s10-8%2010-15c0-4-3-10-10-10Z%22/%3E%0A%20%20%3Cpath%20d%3D%22m185%20145%202%205.6%205.6%202-5.6%202-2%205.6-2-5.6-5.6-2%205.6-2Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M45%20190h16a4%204%200%200%201%204%204v10a4%204%200%200%201-4%204H47l-5%205v-5a4%204%200%200%201-4-4v-10a4%204%200%200%201%204-4Z%22/%3E%0A%20%20%3Cpath%20d%3D%22M140%20195v16a4%204%200%201%201-2-3.4V198h7v-3Z%22/%3E%0A%3C/g%3E%0A%3C/svg%3E");
 }
-
-body.light{
-  --bg:#f4f2ed;
-  --bg-elevated:#ffffff;
-  --surface:rgba(255,255,255,.85);
-  --surface2:rgba(0,0,0,.04);
-  --surface-solid:#ffffff;
-  --accent:#4f46e5;
-  --accent2:#4338ca;
-  --accent-warm:#e11d48;
-  --accent-cool:#0d9488;
-  --accent-glow:rgba(79,70,229,.22);
-  --accent-dim:rgba(79,70,229,.08);
-  --pink:#e11d48;
-  --cyan:#0d9488;
-  --amber:#d97706;
-  --green:#059669;
-  --text:#0a0b12;
-  --text-soft:rgba(10,11,18,.9);
-  --muted:#3d4154;
-  --border:rgba(18,19,26,.16);
-  --b2:rgba(18,19,26,.1);
-  --nav-bg:rgba(244,242,237,.92);
-  --shadow:rgba(15,23,42,.1);
-}
-body.light{background:transparent;color:var(--text)}
-body.light ::-webkit-scrollbar-thumb{background:var(--accent)}
-body.light nav{background:transparent;border-color:transparent}
-body.light .nav-shell{background:var(--nav-bg);border-color:var(--border);box-shadow:0 8px 40px var(--shadow)}
-body.light .nav-drawer{background:rgba(244,242,237,.97)}
-body.light .term{
-  background:var(--surface-solid);
-  border-color:var(--border);
-  box-shadow:0 24px 64px var(--shadow),0 0 0 1px rgba(255,255,255,.8) inset;
-}
-body.light .term-bar{background:var(--bg-elevated);border-bottom-color:var(--b2)}
-body.light .term-cta,.body.light .term-input-row{background:rgba(79,70,229,.04);border-color:var(--b2)}
-body.light .term-hint{color:var(--muted)}
-body.light .term-title{color:var(--muted)}
-body.light .term-input{color:var(--text)}
-body.light .tprompt{color:var(--accent)}
-body.light .tout.ok{color:#059669}
-body.light .tout.acc{color:var(--accent)}
-body.light .tout.err{color:#dc2626}
-body.light .tout{color:var(--text-soft)}
-body.light .tout.hi{color:var(--text)}
-body.light .pong-card,.body.light .lcard,.body.light .proj,.body.light .tgc{box-shadow:0 12px 40px var(--shadow)}
 
 body,nav,.nav-shell,.term,.term-bar,.term-body,.term-cta,.term-input-row,
 .lcard,.fw-row,.tool-chip,.proj,.tgc,.pong-card,.p-head,.p-prog-area,
@@ -116,7 +70,8 @@ body,nav,.nav-shell,.term,.term-bar,.term-body,.term-cta,.term-input-row,
 .resume-btn{
   font-family:var(--fu);font-weight:600;font-size:.78rem;
   padding:.65rem 1.15rem;border-radius:999px;cursor:none;
-  display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:.4rem;
+  max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;text-align:center;
   border:1px solid var(--border);color:var(--text);text-decoration:none;
   background:var(--surface2);transition:transform .2s,background .2s,border-color .2s;
 }
@@ -150,7 +105,6 @@ body,nav,.nav-shell,.term,.term-bar,.term-body,.term-cta,.term-input-row,
 .resume-modal-close:hover{border-color:var(--accent);color:var(--accent)}
 .resume-modal-body{flex:1;position:relative;background:#111319}
 .resume-modal-body iframe{width:100%;height:100%;border:0}
-body.light .resume-modal-body{background:#e9e7e1}
 
 /* ── BACKGROUND ── */
 .bg-layer{
@@ -158,30 +112,6 @@ body.light .resume-modal-body{background:#e9e7e1}
 }
 #bg-canvas{position:absolute;inset:0;width:100%;height:100%}
 
-/* ── THEME TOGGLE ── */
-.theme-toggle{
-  display:flex;align-items:center;gap:.5rem;
-  background:none;border:1px solid var(--border);
-  border-radius:20px;padding:.3rem .55rem .3rem .4rem;
-  cursor:pointer;transition:border-color .2s,background .2s;
-  flex-shrink:0;
-}
-.theme-toggle:hover{border-color:var(--accent);background:var(--accent-dim)}
-.tt-track{
-  width:28px;height:16px;border-radius:8px;
-  background:var(--surface2);border:1px solid var(--border);
-  position:relative;transition:background .3s;flex-shrink:0;
-}
-.tt-thumb{
-  width:10px;height:10px;border-radius:50%;
-  background:var(--accent);
-  position:absolute;top:2px;left:2px;
-  transition:transform .3s cubic-bezier(.34,1.56,.64,1),background .3s;
-  box-shadow:0 0 6px var(--accent-glow);
-}
-body.light .tt-thumb{transform:translateX(12px)}
-body.light .tt-track{background:#d4cef8}
-.tt-icon{font-size:.82rem;line-height:1;user-select:none}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:6rem;background:var(--bg)}
 body{
@@ -282,7 +212,6 @@ section{position:relative;z-index:1}
   white-space:nowrap;
   text-shadow:0 2px 24px rgba(0,0,0,.35);
 }
-body.light .hero-name{text-shadow:0 1px 12px rgba(255,255,255,.5)}
 .hero-name .ru{display:inline;color:var(--text)}
 .hero-name .en{
   display:inline;margin-left:.22em;
@@ -482,8 +411,117 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
   border:1px solid var(--border);border-radius:999px;
   font-size:.78rem;font-weight:600;color:var(--text-soft);text-decoration:none;
   background:var(--surface);transition:all .25s;
+  max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere;
 }
 .cl:hover{border-color:var(--accent);color:var(--text);transform:translateY(-2px);box-shadow:0 8px 24px var(--shadow)}
+
+/* ── CONTACT ROW + IPHONE MOCK ── */
+.contact-row{display:flex;align-items:center;justify-content:flex-start;gap:clamp(2.5rem,6vw,5.5rem);flex-wrap:wrap}
+
+.iphone-mock{
+  --ipw:248px;
+  width:var(--ipw);flex-shrink:0;display:block;margin:0 auto;
+  animation:ipFloat 6s ease-in-out infinite;
+}
+@media(prefers-reduced-motion:reduce){.iphone-mock{animation:none}}
+@keyframes ipFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+.iphone-frame{
+  position:relative;width:100%;aspect-ratio:9/19.5;
+  background:linear-gradient(160deg,#3a3c44,#111219 45%,#08090d);
+  border-radius:46px;padding:11px;
+  box-shadow:0 40px 90px -12px var(--shadow),0 24px 48px -20px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.05) inset;
+}
+.ip-btn{position:absolute;background:linear-gradient(90deg,#1c1d22,#3a3c44);border-radius:3px}
+.ip-btn-action{left:-3px;top:19%;width:3px;height:22px}
+.ip-btn-vol1{left:-3px;top:27%;width:3px;height:38px}
+.ip-btn-vol2{left:-3px;top:38%;width:3px;height:38px}
+.ip-btn-power{right:-3px;top:30%;width:3px;height:52px}
+
+.iphone-screen{
+  position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;
+  background:#0b0c13;display:flex;flex-direction:column;
+  box-shadow:0 0 0 2px #000;
+}
+.iphone-island{
+  position:absolute;top:9px;left:50%;transform:translateX(-50%);
+  width:32%;height:20px;background:#000;border-radius:12px;z-index:6;
+  display:flex;align-items:center;justify-content:flex-end;padding-right:5px;
+}
+.ip-island-dot{width:5px;height:5px;border-radius:50%;background:#1fd45f;box-shadow:0 0 4px #1fd45f}
+
+.ip-status{
+  position:relative;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 20px 8px;color:#fff;font-family:var(--fu);
+}
+.ip-status-left{display:flex;align-items:center;gap:4px}
+.ip-time{font-size:12.5px;font-weight:700;letter-spacing:.01em}
+.ip-dnd{color:#c9cad1;font-size:9px}
+.ip-status-right{display:flex;align-items:center;gap:4px;color:#fff}
+.ip-batt{display:flex;align-items:center;gap:3px}
+.ip-batt-num{font-size:10.5px;font-weight:600}
+.ip-batt-icon{position:relative;width:20px;height:10px;border:1px solid rgba(255,255,255,.75);border-radius:2.5px;padding:1px}
+.ip-batt-icon::after{content:'';position:absolute;right:-3px;top:3px;width:1.5px;height:4px;background:rgba(255,255,255,.75);border-radius:0 1px 1px 0}
+.ip-batt-fill{display:block;height:100%;width:94%;background:#fff;border-radius:1px}
+
+.ip-header{position:relative;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 14px 16px}
+.ip-back{width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.09);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.ip-contact{flex:1;text-align:center;min-width:0}
+.ip-name{color:#fff;font-size:12.5px;font-weight:700;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ip-sub{color:rgba(255,255,255,.42);font-size:9.5px;margin-top:2px}
+.ip-avatar{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;overflow:hidden;
+  background:linear-gradient(150deg,var(--accent),#33368f);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--fm);font-size:10px;font-weight:700;color:#fff;
+}
+.ip-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+.ip-chat{
+  flex:1;position:relative;display:flex;flex-direction:column;overflow:hidden;
+  background-color:#0a0d12;
+  background-image:
+    radial-gradient(circle at 22% 18%,rgba(124,140,255,.10),transparent 42%),
+    radial-gradient(circle at 82% 78%,rgba(94,234,212,.07),transparent 46%),
+    linear-gradient(165deg,#12151c 0%,#0b0d12 55%,#07080b 100%);
+  background-size:cover,cover,cover;
+  background-position:center,center,center;
+  background-repeat:no-repeat,no-repeat,no-repeat;
+}
+.ip-daytag{align-self:center;margin:10px 0 auto;padding:4px 11px;border-radius:9px;background:rgba(0,0,0,.18);color:rgba(255,255,255,.85);font-size:8.5px;font-weight:600}
+.ip-bubbles{padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.ip-bubble{max-width:80%;padding:7px 11px 6px;border-radius:14px;font-size:10.4px;line-height:1.45;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.18)}
+.ip-bubble.out{align-self:flex-end;background:linear-gradient(150deg,var(--accent),#5b6bef);border-bottom-right-radius:4px}
+.ip-bubble.in{align-self:flex-start;background:rgba(35,42,58,.72);border-bottom-left-radius:4px}
+.ip-meta{display:flex;justify-content:flex-end;align-items:center;gap:3px;margin-top:2px;font-size:8px;opacity:.75}
+.ip-meta svg{flex-shrink:0}
+.ip-meta .ip-check{display:inline-flex;align-items:center}
+
+.ip-bubble.pop{animation:ipBubblePop .34s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes ipBubblePop{0%{transform:scale(.65) translateY(6px);opacity:0}55%{transform:scale(1.04) translateY(0);opacity:1}100%{transform:scale(1);opacity:1}}
+
+.ip-typing{display:flex;align-items:center;gap:3px;padding:9px 12px 8px}
+.ip-typing span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.75);display:inline-block;animation:ipTypingDot 1.1s ease-in-out infinite}
+.ip-typing span:nth-child(2){animation-delay:.15s}
+.ip-typing span:nth-child(3){animation-delay:.3s}
+@keyframes ipTypingDot{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-3px);opacity:1}}
+
+.ip-inputbar{position:relative;z-index:5;display:flex;align-items:flex-end;gap:8px;padding:9px 12px 12px}
+.ip-input-row{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.13);border-radius:15px;padding:7px 12px;color:rgba(255,255,255,.55);transition:background .18s,transform .12s}
+.ip-input-row>svg:first-child{flex-shrink:0;align-self:flex-end;margin-bottom:1px}
+.ip-input-row.tap{transform:scale(.97);background:rgba(255,255,255,.2)}
+.ip-placeholder{font-size:10px;flex:1;color:rgba(255,255,255,.45)}
+.ip-emoji-btn{flex-shrink:0;align-self:flex-end;margin-bottom:1px;color:rgba(255,255,255,.55)}
+.ip-typed{font-size:10px;line-height:1.4;flex:1;min-width:0;color:#fff;white-space:normal;word-break:break-word;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.ip-caret{display:inline-block;width:1px;height:11px;background:#fff;margin-left:1px;vertical-align:-2px;animation:ipCaretBlink .9s step-end infinite}
+@keyframes ipCaretBlink{50%{opacity:0}}
+.ip-mic-btn{width:27px;height:27px;border-radius:50%;background:rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;transition:transform .18s cubic-bezier(.34,1.56,.64,1),background .18s}
+.ip-mic-btn .ip-icon-send{display:none}
+.ip-mic-btn.typing .ip-icon-mic{display:none}
+.ip-mic-btn.typing .ip-icon-send{display:block}
+.ip-mic-btn.pressing{transform:scale(.8);background:rgba(255,255,255,.26)}
+.ip-mic-btn.sent{transform:scale(1.15) rotate(-8deg)}
+.ip-home{align-self:center;width:92px;height:3.5px;border-radius:3px;background:rgba(255,255,255,.75);margin:6px auto 9px}
 
 footer{
   border-top:1px solid var(--b2);padding:2rem clamp(1.25rem,4vw,3rem);
@@ -522,9 +560,12 @@ footer{
   .cinner{padding:1.75rem 1.35rem;border-radius:var(--radius-lg)}
   .clinks{flex-direction:column}
   .cl{width:100%;justify-content:center}
+  .contact-row{justify-content:center}
+  .iphone-mock{display:none}
   footer{flex-direction:column;gap:.75rem;text-align:center;padding-bottom:2.5rem}
 }
 @media(max-width:380px){
+  .iphone-mock{--ipw:172px}
   .tgg{grid-template-columns:1fr}
   .lang-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -555,10 +596,6 @@ footer{
     <li><a href="#contact">контакт</a></li>
   </ul>
   <div class="nav-actions">
-    <button class="theme-toggle" id="theme-toggle" aria-label="переключить тему">
-      <span class="tt-icon" id="tt-icon">🌙</span>
-      <div class="tt-track"><div class="tt-thumb"></div></div>
-    </button>
     <button class="nav-burger" id="nav-burger" aria-label="меню"><span></span><span></span><span></span></button>
   </div>
   </div>
@@ -660,7 +697,7 @@ footer{
           <div class="fw-row rev"><span class="fw-ico">◈</span><div class="fw-info"><div class="fw-name">aiogram 3.x</div><div class="fw-sub">Async Telegram Bot Framework</div></div><span class="fw-tag">Python</span></div>
           <div class="fw-row rev"><span class="fw-ico">◇</span><div class="fw-info"><div class="fw-name">React + TypeScript</div><div class="fw-sub">SPA, роутинг, анимации</div></div><span class="fw-tag">Frontend</span></div>
           <div class="fw-row rev"><span class="fw-ico">○</span><div class="fw-info"><div class="fw-name">Node.js / Express</div><div class="fw-sub">Серверная разработка, REST</div></div><span class="fw-tag">Backend</span></div>
-          <div class="fw-row rev"><span class="fw-ico">⚡</span><div class="fw-info"><div class="fw-name">Socket.io</div><div class="fw-sub">Realtime / WebSocket</div></div><span class="fw-tag">Backend</span></div>
+          <div class="fw-row rev"><span class="fw-ico"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span><div class="fw-info"><div class="fw-name">Socket.io</div><div class="fw-sub">Realtime / WebSocket</div></div><span class="fw-tag">Backend</span></div>
           <div class="fw-row rev"><span class="fw-ico">▣</span><div class="fw-info"><div class="fw-name">SQLAlchemy / PostgreSQL</div><div class="fw-sub">ORM + реляционные БД</div></div><span class="fw-tag">Python</span></div>
           <div class="fw-row rev"><span class="fw-ico">▭</span><div class="fw-info"><div class="fw-name">WPF / XAML</div><div class="fw-sub">Desktop UI на .NET</div></div><span class="fw-tag">C#</span></div>
           <div class="fw-row rev"><span class="fw-ico">✦</span><div class="fw-info"><div class="fw-name">Framer Motion</div><div class="fw-sub">Анимации интерфейса</div></div><span class="fw-tag">React</span></div>
@@ -672,13 +709,13 @@ footer{
     <div class="tools-grid">
       <div class="tool-chip rev"><span class="tool-ico">▣</span><span class="tool-name">Linux / Ubuntu</span></div>
       <div class="tool-chip rev"><span class="tool-ico">◆</span><span class="tool-name">3X-UI / Xray</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">⌥</span><span class="tool-name">Git / GitHub</span></div>
+      <div class="tool-chip rev"><span class="tool-ico"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></span><span class="tool-name">Git / GitHub</span></div>
       <div class="tool-chip rev"><span class="tool-ico">◫</span><span class="tool-name">SQLite / PostgreSQL</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">⇄</span><span class="tool-name">REST API</span></div>
+      <div class="tool-chip rev"><span class="tool-ico"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 3 4 4-4 4"/><path d="M3 7h18"/><path d="m7 21-4-4 4-4"/><path d="M21 17H3"/></svg></span><span class="tool-name">REST API</span></div>
       <div class="tool-chip rev"><span class="tool-ico">⌘</span><span class="tool-name">screen / systemd</span></div>
       <div class="tool-chip rev"><span class="tool-ico">▢</span><span class="tool-name">Docker</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">↻</span><span class="tool-name">asyncio</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">⚿</span><span class="tool-name">JWT / bcrypt</span></div>
+      <div class="tool-chip rev"><span class="tool-ico"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v5h-5"/></svg></span><span class="tool-name">asyncio</span></div>
+      <div class="tool-chip rev"><span class="tool-ico"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><span class="tool-name">JWT / bcrypt</span></div>
       <div class="tool-chip rev"><span class="tool-ico">✧</span><span class="tool-name">Gemini / OpenRouter</span></div>
     </div>
   </div>
@@ -688,9 +725,9 @@ footer{
 
 <section id="resume">
   <div class="sec">
-    <div class="slabel rev">CV</div>
+    <div class="slabel rev">Резюме</div>
     <h2 class="stitle rev">Моё <em>резюме</em></h2>
-    <p class="ssub rev">Открой прямо на сайте или скачай Word-файл для отправки работодателю.</p>
+    <p class="ssub rev">Открой прямо на сайте или скачай Word-файл.</p>
     <div class="resume-card rev">
       <div class="resume-icon">CV</div>
       <div class="resume-info">
@@ -710,13 +747,13 @@ footer{
     <div class="resume-modal-bar">
       <span class="resume-modal-title">resume — Fedotov-Danil-CV.pdf</span>
       <div class="resume-modal-actions">
-        <a class="resume-btn" href="resume/Fedotov-Danil-CV.docx" download>⬇ .docx</a>
-        <a class="resume-btn" href="resume/Fedotov-Danil-CV.pdf" target="_blank" rel="noopener">↗ новая вкладка</a>
+        <a class="resume-btn" href="resume/Fedotov-Danil-CV.docx" download><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg> .docx</a>
+        <a class="resume-btn" href="resume/Fedotov-Danil-CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg> новая вкладка</a>
         <button class="resume-modal-close" id="resume-modal-close" type="button">✕</button>
       </div>
     </div>
     <div class="resume-modal-body">
-      <iframe id="resume-iframe" src="" title="Резюме Федотов Данил" loading="lazy"></iframe>
+      <iframe id="resume-iframe" title="Резюме Федотов Данил" loading="lazy"></iframe>
     </div>
   </div>
 </div>
@@ -734,43 +771,43 @@ footer{
         <div class="ptitle">SpyVPN — персональный VPN-сервис</div>
         <div class="pdesc">Собственный VPN-сервис с веб-сайтом, Telegram-ботом и личным кабинетом. Платёжные API (Platega, CryptoBot), автопровизионинг ключей через 3x-ui, реферальная система, пополнение баланса, полная логика от оплаты до подключения клиента.</div>
         <div class="ptags"><span class="tag hi">Python</span><span class="tag hi">HTML/CSS/JS</span><span class="tag">PostgreSQL</span><span class="tag">3x-ui</span><span class="tag">Platega</span><span class="tag">CryptoBot</span></div>
-      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-site.shop/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a><a href="https://t.me/spyvpn_bot" target="_blank" rel="noopener" class="pl" title="Telegram-бот">✈</a></div></div></div></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-site.shop/" target="_blank" rel="noopener" class="pl" title="Сайт"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg></a><a href="https://t.me/spyvpn_bot" target="_blank" rel="noopener" class="pl" title="Telegram-бот"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2Z"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">02</div><div>
         <div class="ptitle">Сайт автошколы ДОСААФ (Еманжелинск)</div>
         <div class="pdesc">Многостраничный сайт (11 страниц) с онлайн-записью, разделом обязательного раскрытия информации по требованиям Рособрнадзора, SEO, доступностью, Яндекс.Картами, формой заявки с маской телефона и слайдером отзывов.</div>
         <div class="ptags"><span class="tag hi">React</span><span class="tag hi">TypeScript</span><span class="tag">React Router</span><span class="tag">Framer Motion</span><span class="tag">Яндекс.Карты</span></div>
-      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://dosaaf-eman174.ru/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a></div></div></div></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://dosaaf-eman174.ru/" target="_blank" rel="noopener" class="pl" title="Сайт"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">03</div><div>
         <div class="ptitle">Telegram-бот интернет-магазин</div>
         <div class="pdesc">Бот-витрина цифровых товаров: каталог с категориями, баланс, промокоды, система возвратов, полноценная админ-панель (товары, пользователи, рассылки, статистика). FSM-сценарии на aiogram.</div>
         <div class="ptags"><span class="tag hi">Python</span><span class="tag hi">aiogram</span><span class="tag">SQLite</span><span class="tag">asyncio</span><span class="tag">FSM</span></div>
-      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/shop-tg-bot/" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
+      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/shop-tg-bot/" target="_blank" rel="noopener" class="pl" title="GitHub"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">04</div><div>
         <div class="ptitle">Онлайн-игра «Угадай шпиона»</div>
         <div class="pdesc">Многопользовательская браузерная игра с комнатами, ролями и чатом в реальном времени. Раздача ролей, таймер, голосование. Сервер на Node.js + Express + Socket.io, данные в SQLite.</div>
         <div class="ptags"><span class="tag hi">Node.js</span><span class="tag hi">Express</span><span class="tag">Socket.io</span><span class="tag">SQLite</span><span class="tag">HTML/CSS/JS</span></div>
-      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-nlyx.onrender.com/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a></div></div></div></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-nlyx.onrender.com/" target="_blank" rel="noopener" class="pl" title="Сайт"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">05</div><div>
         <div class="ptitle">Карта мусорных контейнеров + AI</div>
         <div class="pdesc">Веб-приложение для управления отходами: интерактивная карта Leaflet, генерация оптимальных точек через Gemini AI, маршруты вывоза, чат-помощник, экспорт в Excel. Адаптивный UI со стеклянными эффектами.</div>
         <div class="ptags"><span class="tag hi">Node.js</span><span class="tag">Express</span><span class="tag">Gemini AI</span><span class="tag">Leaflet.js</span><span class="tag">XLSX</span></div>
-      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/garbage-containers-on-the-map" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
+      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/garbage-containers-on-the-map" target="_blank" rel="noopener" class="pl" title="GitHub"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">06</div><div>
         <div class="ptitle">ToDo with AI / Team Planner</div>
         <div class="pdesc">Веб-приложение для командного управления проектами: JWT-аутентификация, ролевая модель (работодатель/работник), древовидный AI Planner через OpenRouter, оценка трудоёмкости, личные кабинеты с аватарами.</div>
         <div class="ptags"><span class="tag hi">Node.js</span><span class="tag">Express</span><span class="tag">JWT</span><span class="tag">OpenRouter</span><span class="tag">Vanilla JS</span></div>
-      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://todo-with-ai-o1ll.onrender.com/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a><a href="https://github.com/harrrdie/todo-with-ai" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://todo-with-ai-o1ll.onrender.com/" target="_blank" rel="noopener" class="pl" title="Сайт"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"/></svg></a><a href="https://github.com/harrrdie/todo-with-ai" target="_blank" rel="noopener" class="pl" title="GitHub"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">07</div><div>
         <div class="ptitle">FPC AutoSteamPoints Plugin</div>
         <div class="pdesc">Плагин для FunPay Cardinal. Следит за балансом Steam Points, автоматически покупает предметы и обрабатывает очереди без ручного участия. Используется реальными пользователями FunPay.</div>
         <div class="ptags"><span class="tag hi">Python</span><span class="tag">FunPay Cardinal</span><span class="tag">Steam API</span><span class="tag">Automation</span></div>
-      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/fpc-autosteampoints-plugin" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
+      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/fpc-autosteampoints-plugin" target="_blank" rel="noopener" class="pl" title="GitHub"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">08</div><div>
         <div class="ptitle">Калькулятор стоимости стеклопакетов</div>
@@ -817,15 +854,71 @@ footer{
 <section id="contact">
   <div class="cglow"></div>
   <div class="sec">
-    <div class="cinner rev">
-      <div class="slabel rev">Связь</div>
-      <h2 class="ctitle">Есть задача?<em>Пиши.</em></h2>
-      <p class="csub">Ищу работу или заказы по веб-разработке и/или Telegram ботов любой сложности.<br>Рассмотрю и другие варианты, если задача интересная.</p>
-      <div class="clinks">
-        <a href="https://t.me/pr0cr4st1n4t10n" target="_blank" class="cl"><span>✈</span> @pr0cr4st1n4t10n</a>
-        <a href="https://github.com/harrrdie" target="_blank" class="cl"><span>⌥</span> github.com/harrrdie</a>
+    <div class="contact-row">
+      <div class="cinner rev">
+        <div class="slabel rev">Связь</div>
+        <h2 class="ctitle">Есть задача?<em>Пиши.</em></h2>
+        <p class="csub">Ищу работу или заказы по веб-разработке и/или Telegram ботов любой сложности.<br>Рассмотрю и другие варианты, если задача интересная.</p>
+        <div class="clinks">
+          <a href="https://t.me/pr0cr4st1n4t10n" target="_blank" class="cl"><span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9 22 2Z"/></svg></span> @pr0cr4st1n4t10n</a>
+          <a href="https://github.com/harrrdie" target="_blank" class="cl"><span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.49-1.11-1.49-.9-.63.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg></span> github.com/harrrdie</a>
+        </div>
+        <a href="https://t.me/pr0cr4st1n4t10n" target="_blank" class="btn btnp">Начать диалог <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M5 12h14"/><path d="m13 5 7 7-7 7"/></svg></a>
       </div>
-      <a href="https://t.me/pr0cr4st1n4t10n" target="_blank" class="btn btnp">Начать диалог →</a>
+
+      <div class="iphone-mock" aria-hidden="true">
+        <div class="iphone-frame">
+          <div class="ip-btn ip-btn-action"></div>
+          <div class="ip-btn ip-btn-vol1"></div>
+          <div class="ip-btn ip-btn-vol2"></div>
+          <div class="ip-btn ip-btn-power"></div>
+          <div class="iphone-screen">
+            <div class="iphone-island"><span class="ip-island-dot"></span></div>
+
+            <div class="ip-status">
+              <div class="ip-status-left">
+                <span class="ip-time">03:15</span>
+              </div>
+              <div class="ip-status-right">
+                <svg width="15" height="10" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx=".6"/><rect x="5" y="5" width="3" height="7" rx=".6"/><rect x="10" y="3" width="3" height="9" rx=".6"/><rect x="15" y="0" width="3" height="12" rx=".6"/></svg>
+                <svg width="13" height="10" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9Zm8 8l3 3 3-3a4.237 4.237 0 0 0-6 0Zm-4-4l2 2a7.074 7.074 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13Z"/></svg>
+                <span class="ip-batt"><span class="ip-batt-num">100</span><span class="ip-batt-icon"><span class="ip-batt-fill"></span></span></span>
+              </div>
+            </div>
+
+            <div class="ip-header">
+              <div class="ip-back">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+              </div>
+              <div class="ip-contact">
+                <div class="ip-name">Данил Федотов</div>
+                <div class="ip-sub" id="ip-status-sub">был(а) недавно</div>
+              </div>
+              <div class="ip-avatar"><img src="assets/avatar.png" alt="Данил Федотов"></div>
+            </div>
+
+            <div class="ip-chat">
+              <div class="ip-daytag"><span>Сегодня</span></div>
+              <div class="ip-bubbles" id="ip-bubbles"></div>
+            </div>
+
+            <div class="ip-inputbar">
+              <div class="ip-input-row">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5 12.5 20a4.5 4.5 0 0 1-6.36-6.36l8.48-8.49a3 3 0 0 1 4.24 4.25l-8.49 8.48a1.5 1.5 0 0 1-2.12-2.12l7.07-7.07"/></svg>
+                <span class="ip-placeholder" id="ip-placeholder">Сообщение</span>
+                <span class="ip-typed" id="ip-typed" style="display:none"></span>
+                <svg class="ip-emoji-btn" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01"/><path d="M15 10h.01"/><path d="M8.5 14.5a5 5 0 0 0 7 0"/></svg>
+              </div>
+              <div class="ip-mic-btn" id="ip-mic-btn">
+                <svg class="ip-icon-mic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><path d="M12 19v3"/></svg>
+                <svg class="ip-icon-send" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3 11.5 21 3l-6.6 18-3.9-7.5L3 11.5Z"/></svg>
+              </div>
+            </div>
+
+            <div class="ip-home"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -914,20 +1007,6 @@ footer{
   }
 
   setTimeout(tick, 600);
-})();
-
-// ── THEME TOGGLE ────────────────────────────────────────
-(function(){
-  const btn  = document.getElementById('theme-toggle');
-  const icon = document.getElementById('tt-icon');
-  const saved = localStorage.getItem('theme');
-  if(saved === 'light'){ document.body.classList.add('light'); icon.textContent = '☀️'; }
-
-  btn.addEventListener('click', ()=>{
-    const isLight = document.body.classList.toggle('light');
-    icon.textContent = isLight ? '☀️' : '🌙';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
 })();
 
 // ── BACKGROUND — generative flow field ───────────────────
@@ -1452,7 +1531,9 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeResumeModal()
     overlay.classList.add('hidden');
     running = true;
     hint.textContent = 'до 7 очков · двигай мышь';
-    loop();
+    lastTime = null;
+    acc = 0;
+    requestAnimationFrame(loop);
   }
 
   startBtn.addEventListener('click', startGame);
@@ -1463,10 +1544,32 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeResumeModal()
     if(!running) requestAnimationFrame(idle);
   })();
 
-  function loop(){
-    if(!running) return;
-    update(); draw();
-    requestAnimationFrame(loop);
+  // ── fixed-timestep loop ──────────────────────────────
+  // Physics always advance in STEP-sized increments regardless of the
+  // monitor's refresh rate (60/120/144/240Hz…), so ball/paddle speed and
+  // AI behaviour stay identical everywhere. Rendering still happens once
+  // per animation frame, so high-Hz screens get smoother visuals without
+  // the game itself running faster.
+  const STEP = 1 / 60;      // fixed physics step, seconds
+  const MAX_FRAME = 0.25;   // clamp huge gaps (tab switch, etc.)
+  let lastTime = null;
+  let acc = 0;
+
+  function loop(ts) {
+    if (!running) return;
+    if (lastTime === null) lastTime = ts;
+    let frameTime = (ts - lastTime) / 1000;
+    lastTime = ts;
+    if (frameTime > MAX_FRAME) frameTime = MAX_FRAME;
+
+    acc += frameTime;
+    while (acc >= STEP) {
+      update();
+      acc -= STEP;
+      if (!running) break; // game ended mid-catch-up
+    }
+    draw();
+    if (running) requestAnimationFrame(loop);
   }
 })();
 
@@ -1495,6 +1598,157 @@ window.addEventListener('scroll',()=>{
     if(!on) a.style.color='';
   });
 },{passive:true});
+
+// ── IPHONE CHAT — telegram-like typing / send / reply demo ──
+(function(){
+  const mock = document.querySelector('.iphone-mock');
+  if(!mock) return;
+
+  const bubbles   = document.getElementById('ip-bubbles');
+  const typed     = document.getElementById('ip-typed');
+  const placeholder = document.getElementById('ip-placeholder');
+  const inputRow  = document.querySelector('.ip-input-row');
+  const micBtn    = document.getElementById('ip-mic-btn');
+  const statusSub = document.getElementById('ip-status-sub');
+  const reduced   = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const MSG_OUT = 'Привет! Есть задача для тебя!';
+  const MSG_IN  = 'Привет! Я готов выполнить её в кратчайшие сроки!';
+
+  const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+  const checkSingle = '<svg width="11" height="8" viewBox="0 0 16 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5.5 4 8.5 9 2.5"/></svg>';
+  const checkDouble  = '<svg width="11" height="7" viewBox="0 0 16 11" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M1 5.5 4 8.5 9 2.5"/><path d="M6 5.5 9 8.5 15 1.5"/></svg>';
+
+  function nowTime(){
+    return '03:15';
+  }
+
+  function addBubble(who, text, checks){
+    const b = document.createElement('div');
+    b.className = `ip-bubble ${who} pop`;
+    const meta = who === 'out'
+      ? `<span class="ip-meta">${nowTime()} <span class="ip-check">${checks}</span></span>`
+      : `<span class="ip-meta">${nowTime()}</span>`;
+    b.innerHTML = `${text}${meta}`;
+    bubbles.appendChild(b);
+    bubbles.scrollTop = bubbles.scrollHeight;
+    return b;
+  }
+
+  function addTyping(){
+    const b = document.createElement('div');
+    b.className = 'ip-bubble in pop';
+    b.id = 'ip-typing-bubble';
+    b.style.padding = '0';
+    b.innerHTML = '<div class="ip-typing"><span></span><span></span><span></span></div>';
+    bubbles.appendChild(b);
+    bubbles.scrollTop = bubbles.scrollHeight;
+    return b;
+  }
+
+  let gen = 0; // generation token to cancel stale loops when scrolled away
+
+  async function typeIntoInput(text, myGen){
+    placeholder.style.display = 'none';
+    typed.style.display = 'inline';
+    typed.textContent = '';
+    micBtn.classList.add('typing');
+    for(let i = 0; i < text.length; i++){
+      if(gen !== myGen) return false;
+      typed.textContent += text[i];
+      if(i === 0){
+        await sleep(70);
+        if(gen !== myGen) return false;
+        inputRow.classList.remove('tap');
+      }
+      await sleep(38 + Math.random()*45);
+    }
+    typed.innerHTML = text + '<span class="ip-caret"></span>';
+    return true;
+  }
+
+  function resetInput(){
+    typed.style.display = 'none';
+    typed.textContent = '';
+    placeholder.style.display = '';
+    micBtn.classList.remove('typing');
+    inputRow.classList.remove('tap');
+  }
+
+  async function runCycle(myGen){
+    // reset
+    bubbles.innerHTML = '';
+    resetInput();
+    statusSub.textContent = 'был(а) недавно';
+    if(gen !== myGen) return;
+    await sleep(700);
+
+    // 1) user "taps" the input field (visible press), *then* the message types in
+    inputRow.classList.add('tap');
+    await sleep(240);
+    if(gen !== myGen) return;
+    if(!(await typeIntoInput(MSG_OUT, myGen))) return;
+    await sleep(500);
+    if(gen !== myGen) return;
+
+    // 2) "send" — press the button down, then release with a pop
+    resetInput();
+    micBtn.classList.add('pressing');
+    await sleep(90);
+    if(gen !== myGen) return;
+    micBtn.classList.remove('pressing');
+    micBtn.classList.add('sent');
+    setTimeout(() => micBtn.classList.remove('sent'), 260);
+    const outBubble = addBubble('out', MSG_OUT, checkSingle);
+    await sleep(550);
+    if(gen !== myGen) return;
+    const checkSpan = outBubble.querySelector('.ip-check');
+    if(checkSpan) checkSpan.innerHTML = checkDouble;
+
+    // 3) contact is "typing..."
+    await sleep(500);
+    if(gen !== myGen) return;
+    statusSub.textContent = 'печатает...';
+    addTyping();
+    await sleep(1600);
+    if(gen !== myGen) return;
+
+    // 4) reply arrives
+    const typingEl = document.getElementById('ip-typing-bubble');
+    if(typingEl) typingEl.remove();
+    addBubble('in', MSG_IN);
+    statusSub.textContent = 'был(а) недавно';
+
+    // hold, then loop
+    await sleep(4200);
+    if(gen !== myGen) return;
+    runCycle(myGen);
+  }
+
+  function renderStatic(){
+    bubbles.innerHTML = '';
+    addBubble('out', MSG_OUT, checkDouble);
+    addBubble('in', MSG_IN);
+  }
+
+  if(reduced){
+    renderStatic();
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if(e.isIntersecting){
+        gen++;
+        runCycle(gen);
+      } else {
+        gen++; // invalidates any in-flight cycle
+      }
+    });
+  }, {threshold:.35});
+  io.observe(mock);
+})();
 </script>
 </body>
 </html>
