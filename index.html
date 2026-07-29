@@ -13,9 +13,9 @@
 :root{
   --bg:#050608;
   --bg-elevated:#0c0e15;
-  --surface:rgba(255,255,255,.04);
-  --surface2:rgba(255,255,255,.07);
-  --surface-solid:#101219;
+  --surface:rgba(255,255,255,.055);
+  --surface2:rgba(255,255,255,.09);
+  --surface-solid:#12141c;
   --accent:#7c8cff;
   --accent2:#5b6bef;
   --accent-warm:#ff8fab;
@@ -26,12 +26,12 @@
   --cyan:#5eead4;
   --amber:#fcd34d;
   --green:#6ee7a8;
-  --text:#eef0f8;
-  --text-soft:rgba(238,240,248,.72);
-  --muted:#6b7289;
-  --border:rgba(255,255,255,.1);
-  --b2:rgba(255,255,255,.05);
-  --nav-bg:rgba(3,4,10,.72);
+  --text:#f7f8ff;
+  --text-soft:rgba(247,248,255,.94);
+  --muted:#c0c5d8;
+  --border:rgba(255,255,255,.16);
+  --b2:rgba(255,255,255,.09);
+  --nav-bg:rgba(3,4,10,.82);
   --shadow:rgba(0,0,0,.55);
   --radius-sm:10px;
   --radius-md:16px;
@@ -58,13 +58,13 @@ body.light{
   --cyan:#0d9488;
   --amber:#d97706;
   --green:#059669;
-  --text:#12131a;
-  --text-soft:rgba(18,19,26,.75);
-  --muted:#6b6f82;
-  --border:rgba(18,19,26,.1);
-  --b2:rgba(18,19,26,.06);
-  --nav-bg:rgba(244,242,237,.88);
-  --shadow:rgba(15,23,42,.08);
+  --text:#0a0b12;
+  --text-soft:rgba(10,11,18,.9);
+  --muted:#3d4154;
+  --border:rgba(18,19,26,.16);
+  --b2:rgba(18,19,26,.1);
+  --nav-bg:rgba(244,242,237,.92);
+  --shadow:rgba(15,23,42,.1);
 }
 body.light{background:transparent;color:var(--text)}
 body.light ::-webkit-scrollbar-thumb{background:var(--accent)}
@@ -96,6 +96,61 @@ body,nav,.nav-shell,.term,.term-bar,.term-body,.term-cta,.term-input-row,
 .ctitle,.csub,.cl,.nav-links a,.nav-drawer a,.nd-close,.nav-burger,.hero-chip{
   transition:background .4s ease,color .4s ease,border-color .4s ease,box-shadow .4s ease,transform .4s ease;
 }
+
+/* ── RESUME SECTION ── */
+.resume-card{
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1.75rem;
+  padding:1.75rem 2rem;background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);backdrop-filter:blur(20px);
+}
+.resume-icon{
+  width:64px;height:64px;border-radius:var(--radius-md);flex-shrink:0;
+  background:linear-gradient(155deg,var(--accent-dim),rgba(255,143,171,.1));
+  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+  font-family:var(--fm);font-size:.95rem;font-weight:700;color:var(--accent);letter-spacing:.04em;
+}
+.resume-info{min-width:0}
+.resume-info .rname{font-family:var(--fu);font-weight:700;font-size:1.05rem;color:var(--text);margin-bottom:.2rem}
+.resume-info .rmeta{font-family:var(--fm);font-size:.74rem;color:var(--muted)}
+.resume-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.resume-btn{
+  font-family:var(--fu);font-weight:600;font-size:.78rem;
+  padding:.65rem 1.15rem;border-radius:999px;cursor:none;
+  display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap;
+  border:1px solid var(--border);color:var(--text);text-decoration:none;
+  background:var(--surface2);transition:transform .2s,background .2s,border-color .2s;
+}
+.resume-btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.resume-btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+.resume-btn.primary:hover{background:var(--accent2)}
+@media(max-width:640px){
+  .resume-card{grid-template-columns:1fr;text-align:center;justify-items:center}
+}
+
+.resume-modal-overlay{
+  position:fixed;inset:0;z-index:400;display:none;align-items:center;justify-content:center;
+  padding:2rem 1rem;background:rgba(3,4,10,.82);backdrop-filter:blur(10px);
+}
+.resume-modal-overlay.open{display:flex}
+.resume-modal{
+  width:min(880px,100%);height:min(88vh,1100px);display:flex;flex-direction:column;
+  background:var(--surface-solid);border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.6);
+}
+.resume-modal-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.8rem 1.1rem;border-bottom:1px solid var(--b2);background:var(--bg-elevated);flex-shrink:0;
+}
+.resume-modal-title{font-family:var(--fm);font-size:.76rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.resume-modal-actions{display:flex;align-items:center;gap:.5rem;flex-shrink:0}
+.resume-modal-close{
+  width:32px;height:32px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);
+  color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:none;font-size:1rem;flex-shrink:0;
+}
+.resume-modal-close:hover{border-color:var(--accent);color:var(--accent)}
+.resume-modal-body{flex:1;position:relative;background:#111319}
+.resume-modal-body iframe{width:100%;height:100%;border:0}
+body.light .resume-modal-body{background:#e9e7e1}
 
 /* ── BACKGROUND ── */
 .bg-layer{
@@ -199,7 +254,7 @@ section{position:relative;z-index:1}
 
 #hero{
   min-height:100vh;display:flex;align-items:center;
-  padding:7.5rem clamp(1.25rem,4vw,3.5rem) 5rem;
+  padding:7.5rem clamp(1.25rem,4vw,3.5rem) 4.5rem;
   position:relative;
   border-bottom:1px solid var(--b2);
 }
@@ -225,7 +280,9 @@ section{position:relative;z-index:1}
   line-height:1;letter-spacing:-.04em;margin-bottom:2.75rem;
   animation:fu .6s .1s ease both;
   white-space:nowrap;
+  text-shadow:0 2px 24px rgba(0,0,0,.35);
 }
+body.light .hero-name{text-shadow:0 1px 12px rgba(255,255,255,.5)}
 .hero-name .ru{display:inline;color:var(--text)}
 .hero-name .en{
   display:inline;margin-left:.22em;
@@ -315,17 +372,12 @@ section{position:relative;z-index:1}
 .btns{border:1px solid var(--border);color:var(--text-soft);background:transparent}
 .btns:hover{border-color:var(--accent);color:var(--text);background:var(--accent-dim)}
 
-.hero-scroll{position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:fu .6s .45s ease both;opacity:.7}
-.hero-scroll span{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
-.sbar{width:2px;height:48px;border-radius:99px;background:var(--accent-cool);animation:sb 2.2s ease-in-out infinite}
-@keyframes sb{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom;opacity:0}}
-
 .sec{padding:clamp(4.5rem,10vw,8rem) clamp(1.25rem,4vw,3rem);max-width:1120px;margin:0 auto}
 .slabel{font-size:.72rem;font-weight:700;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .75rem;border-radius:999px;background:var(--accent-dim);border:1px solid rgba(124,140,255,.2)}
 .slabel::before{display:none}
 .stitle{font-size:clamp(2rem,4.5vw,3.25rem);font-weight:800;line-height:1.08;letter-spacing:-.03em;margin-bottom:.65rem;color:var(--text)}
 .stitle em{font-style:normal;font-family:var(--fs);font-weight:400;color:var(--accent-warm)}
-.ssub{font-size:.95rem;color:var(--muted);margin-bottom:3rem;line-height:1.75;max-width:540px;font-weight:500}
+.ssub{font-size:.95rem;color:var(--text-soft);margin-bottom:3rem;line-height:1.75;max-width:540px;font-weight:500}
 hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2);position:relative;z-index:1}
 
 .skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -338,7 +390,13 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
   transition:transform .25s,box-shadow .25s,border-color .25s;
 }
 .lcard:hover{transform:translateY(-6px);border-color:rgba(124,140,255,.35);box-shadow:0 20px 48px var(--shadow)}
-.licon{font-size:1.85rem;line-height:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.2))}
+.licon{
+  font-family:var(--fm);font-size:.78rem;font-weight:600;line-height:1;
+  color:var(--accent);letter-spacing:.02em;
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--accent-dim);border:1px solid rgba(124,140,255,.25);
+}
 .lname{font-size:.75rem;font-weight:700;color:var(--text)}
 .lbw{width:100%;height:4px;background:var(--b2);border-radius:99px;overflow:hidden}
 .lb{height:100%;border-radius:99px;background:var(--accent);width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1)}
@@ -350,7 +408,7 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
   background:var(--surface);transition:transform .2s,box-shadow .2s,border-color .2s;
 }
 .fw-row:hover{transform:translateX(6px);border-color:rgba(124,140,255,.3);box-shadow:0 8px 28px var(--shadow)}
-.fw-ico{font-size:1.15rem;flex-shrink:0}
+.fw-ico{font-size:1rem;flex-shrink:0;color:var(--accent);width:1.4rem;text-align:center}
 .fw-info{flex:1;min-width:0}
 .fw-name{font-size:.78rem;font-weight:700;color:var(--text)}
 .fw-sub{font-size:.68rem;color:var(--muted);margin-top:.15rem;font-weight:500}
@@ -363,7 +421,7 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
   background:var(--surface);font-weight:600;transition:transform .18s,border-color .18s;
 }
 .tool-chip:hover{transform:translateY(-3px);border-color:rgba(94,234,212,.35)}
-.tool-ico{font-size:1rem}
+.tool-ico{font-size:.9rem;color:var(--accent);width:1.15rem;text-align:center;flex-shrink:0}
 .tool-name{font-size:.7rem;color:var(--text-soft)}
 
 .pgrid{display:grid;gap:1rem}
@@ -382,9 +440,9 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
 }
 .ptitle{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:var(--text);margin-bottom:.45rem}
 .proj.featured .ptitle{font-size:1.25rem}
-.pdesc{font-size:.82rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;font-weight:500}
+.pdesc{font-size:.82rem;color:var(--text-soft);line-height:1.7;margin-bottom:1rem;font-weight:500}
 .ptags{display:flex;flex-wrap:wrap;gap:.35rem}
-.tag{font-size:.65rem;font-weight:600;padding:.28rem .6rem;border-radius:999px;border:1px solid var(--border);color:var(--muted);background:var(--b2)}
+.tag{font-size:.65rem;font-weight:600;padding:.28rem .6rem;border-radius:999px;border:1px solid var(--border);color:var(--text-soft);background:var(--b2)}
 .tag:hover{border-color:var(--accent);color:var(--accent)}
 .tag.hi{border-color:rgba(124,140,255,.35);color:var(--accent);background:var(--accent-dim)}
 .pright{display:flex;flex-direction:column;align-items:flex-end;gap:.65rem;flex-shrink:0}
@@ -403,7 +461,7 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
   transition:transform .25s,border-color .25s,box-shadow .25s;
 }
 .tgc:hover{border-color:rgba(94,234,212,.4);transform:translateY(-5px);box-shadow:0 16px 40px var(--shadow)}
-.tgico{font-size:1.6rem;margin-bottom:.65rem}
+.tgico{font-size:1.25rem;margin-bottom:.65rem;color:var(--accent);font-family:var(--fm)}
 .tgname{font-size:.82rem;font-weight:800;color:var(--text);margin-bottom:.25rem}
 .tghandle{font-size:.72rem;font-weight:600;color:var(--cyan)}
 
@@ -417,7 +475,7 @@ hr.div{border:none;height:1px;max-width:1120px;margin:0 auto;background:var(--b2
 }
 .ctitle{font-size:clamp(2.25rem,5vw,3.75rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
 .ctitle em{font-family:var(--fs);font-style:italic;font-weight:400;display:block;color:var(--accent-warm)}
-.csub{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;font-weight:500}
+.csub{font-size:.92rem;color:var(--text-soft);line-height:1.8;margin-bottom:2rem;font-weight:500}
 .clinks{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:2rem}
 .cl{
   display:flex;align-items:center;gap:.5rem;padding:.85rem 1.25rem;
@@ -452,7 +510,6 @@ footer{
   #hero{padding:6.5rem 1.15rem 3.5rem;min-height:100svh}
   .hero-name{margin-bottom:2rem}
   .term-body{font-size:.72rem;max-height:220px}
-  .hero-scroll{display:none}
   .sec{padding:4rem 1.15rem}
   .skills-layout{grid-template-columns:1fr;gap:2.25rem}
   .lang-grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr))}
@@ -492,6 +549,7 @@ footer{
   <ul class="nav-links">
     <li><a href="#hero">главная</a></li>
     <li><a href="#skills">навыки</a></li>
+    <li><a href="#resume">резюме</a></li>
     <li><a href="#projects">проекты</a></li>
     <li><a href="#tg">telegram</a></li>
     <li><a href="#contact">контакт</a></li>
@@ -510,6 +568,7 @@ footer{
   <button class="nd-close" id="nd-close">✕</button>
   <a href="#hero"     onclick="closeDrawer()">Главная</a>
   <a href="#skills"   onclick="closeDrawer()">Навыки</a>
+  <a href="#resume"   onclick="closeDrawer()">Резюме</a>
   <a href="#projects" onclick="closeDrawer()">Проекты</a>
   <a href="#tg"       onclick="closeDrawer()">Telegram</a>
   <a href="#contact"  onclick="closeDrawer()">Контакт</a>
@@ -573,7 +632,6 @@ footer{
 
     </div>
   </div>
-  <div class="hero-scroll"><span>Листайте вниз</span><div class="sbar"></div></div>
 </section>
 
 <hr class="div">
@@ -587,39 +645,81 @@ footer{
       <div>
         <div class="skills-col-title rev">Языки</div>
         <div class="lang-grid">
-          <div class="lcard rev"><div class="licon">🐍</div><div class="lname">Python</div><div class="lbw"><div class="lb" data-w="90"></div></div></div>
-          <div class="lcard rev"><div class="licon">🌐</div><div class="lname">HTML</div><div class="lbw"><div class="lb" data-w="92"></div></div></div>
-          <div class="lcard rev"><div class="licon">🎨</div><div class="lname">CSS</div><div class="lbw"><div class="lb" data-w="88"></div></div></div>
-          <div class="lcard rev"><div class="licon">⚡</div><div class="lname">JavaScript</div><div class="lbw"><div class="lb" data-w="80"></div></div></div>
-          <div class="lcard rev"><div class="licon">🖥️</div><div class="lname">C#</div><div class="lbw"><div class="lb" data-w="60"></div></div></div>
-          <div class="lcard rev"><div class="licon">📊</div><div class="lname">1С</div><div class="lbw"><div class="lb" data-w="30"></div></div></div>
+          <div class="lcard rev"><div class="licon">Py</div><div class="lname">Python</div><div class="lbw"><div class="lb" data-w="90"></div></div></div>
+          <div class="lcard rev"><div class="licon">&lt;/&gt;</div><div class="lname">HTML</div><div class="lbw"><div class="lb" data-w="92"></div></div></div>
+          <div class="lcard rev"><div class="licon">#</div><div class="lname">CSS</div><div class="lbw"><div class="lb" data-w="88"></div></div></div>
+          <div class="lcard rev"><div class="licon">JS</div><div class="lname">JavaScript</div><div class="lbw"><div class="lb" data-w="82"></div></div></div>
+          <div class="lcard rev"><div class="licon">TS</div><div class="lname">TypeScript</div><div class="lbw"><div class="lb" data-w="70"></div></div></div>
+          <div class="lcard rev"><div class="licon">C#</div><div class="lname">C#</div><div class="lbw"><div class="lb" data-w="60"></div></div></div>
+          <div class="lcard rev"><div class="licon">1C</div><div class="lname">1С</div><div class="lbw"><div class="lb" data-w="30"></div></div></div>
         </div>
       </div>
       <div>
         <div class="skills-col-title rev">Фреймворки &amp; библиотеки</div>
         <div class="fw-list">
-          <div class="fw-row rev"><span class="fw-ico">🤖</span><div class="fw-info"><div class="fw-name">aiogram 3.x</div><div class="fw-sub">Async Telegram Bot Framework</div></div><span class="fw-tag">Python</span></div>
-          <div class="fw-row rev"><span class="fw-ico">🗄️</span><div class="fw-info"><div class="fw-name">SQLAlchemy</div><div class="fw-sub">Async ORM + Alembic migrations</div></div><span class="fw-tag">Python</span></div>
-          <div class="fw-row rev"><span class="fw-ico">⚡</span><div class="fw-info"><div class="fw-name">FastAPI</div><div class="fw-sub">REST API Framework</div></div><span class="fw-tag">Python</span></div>
-          <div class="fw-row rev"><span class="fw-ico">⏰</span><div class="fw-info"><div class="fw-name">APScheduler</div><div class="fw-sub">Background Task Scheduling</div></div><span class="fw-tag">Python</span></div>
-          <div class="fw-row rev"><span class="fw-ico">🌐</span><div class="fw-info"><div class="fw-name">aiohttp</div><div class="fw-sub">Async HTTP Client / Server</div></div><span class="fw-tag">Python</span></div>
-          <div class="fw-row rev"><span class="fw-ico">🪟</span><div class="fw-info"><div class="fw-name">WPF / XAML</div><div class="fw-sub">Desktop UI на .NET</div></div><span class="fw-tag">C#</span></div>
+          <div class="fw-row rev"><span class="fw-ico">◈</span><div class="fw-info"><div class="fw-name">aiogram 3.x</div><div class="fw-sub">Async Telegram Bot Framework</div></div><span class="fw-tag">Python</span></div>
+          <div class="fw-row rev"><span class="fw-ico">◇</span><div class="fw-info"><div class="fw-name">React + TypeScript</div><div class="fw-sub">SPA, роутинг, анимации</div></div><span class="fw-tag">Frontend</span></div>
+          <div class="fw-row rev"><span class="fw-ico">○</span><div class="fw-info"><div class="fw-name">Node.js / Express</div><div class="fw-sub">Серверная разработка, REST</div></div><span class="fw-tag">Backend</span></div>
+          <div class="fw-row rev"><span class="fw-ico">⚡</span><div class="fw-info"><div class="fw-name">Socket.io</div><div class="fw-sub">Realtime / WebSocket</div></div><span class="fw-tag">Backend</span></div>
+          <div class="fw-row rev"><span class="fw-ico">▣</span><div class="fw-info"><div class="fw-name">SQLAlchemy / PostgreSQL</div><div class="fw-sub">ORM + реляционные БД</div></div><span class="fw-tag">Python</span></div>
+          <div class="fw-row rev"><span class="fw-ico">▭</span><div class="fw-info"><div class="fw-name">WPF / XAML</div><div class="fw-sub">Desktop UI на .NET</div></div><span class="fw-tag">C#</span></div>
+          <div class="fw-row rev"><span class="fw-ico">✦</span><div class="fw-info"><div class="fw-name">Framer Motion</div><div class="fw-sub">Анимации интерфейса</div></div><span class="fw-tag">React</span></div>
+          <div class="fw-row rev"><span class="fw-ico">⌖</span><div class="fw-info"><div class="fw-name">Leaflet.js</div><div class="fw-sub">Интерактивные карты</div></div><span class="fw-tag">JS</span></div>
         </div>
       </div>
     </div>
     <div class="skills-col-title rev" style="margin-top:2.5rem">Инфраструктура</div>
     <div class="tools-grid">
-      <div class="tool-chip rev"><span class="tool-ico">🐧</span><span class="tool-name">Linux / Ubuntu</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">🔒</span><span class="tool-name">3X-UI / Xray</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">🐙</span><span class="tool-name">Git / GitHub</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">🗃️</span><span class="tool-name">SQLite / MySQL</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">🔌</span><span class="tool-name">REST API</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">📟</span><span class="tool-name">screen / systemd</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">🐳</span><span class="tool-name">Docker</span></div>
-      <div class="tool-chip rev"><span class="tool-ico">🔁</span><span class="tool-name">asyncio</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">▣</span><span class="tool-name">Linux / Ubuntu</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">◆</span><span class="tool-name">3X-UI / Xray</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">⌥</span><span class="tool-name">Git / GitHub</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">◫</span><span class="tool-name">SQLite / PostgreSQL</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">⇄</span><span class="tool-name">REST API</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">⌘</span><span class="tool-name">screen / systemd</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">▢</span><span class="tool-name">Docker</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">↻</span><span class="tool-name">asyncio</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">⚿</span><span class="tool-name">JWT / bcrypt</span></div>
+      <div class="tool-chip rev"><span class="tool-ico">✧</span><span class="tool-name">Gemini / OpenRouter</span></div>
     </div>
   </div>
 </section>
+
+<hr class="div">
+
+<section id="resume">
+  <div class="sec">
+    <div class="slabel rev">CV</div>
+    <h2 class="stitle rev">Моё <em>резюме</em></h2>
+    <p class="ssub rev">Открой прямо на сайте или скачай Word-файл для отправки работодателю.</p>
+    <div class="resume-card rev">
+      <div class="resume-icon">CV</div>
+      <div class="resume-info">
+        <div class="rname">Федотов Данил Михайлович — CV</div>
+        <div class="rmeta">PDF для просмотра · DOCX для скачивания</div>
+      </div>
+      <div class="resume-actions">
+        <button class="resume-btn primary" id="resume-open-btn" type="button">Открыть резюме</button>
+        <a class="resume-btn" href="resume/Fedotov-Danil-CV.docx" download>Скачать .docx</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="resume-modal-overlay" id="resume-modal-overlay">
+  <div class="resume-modal">
+    <div class="resume-modal-bar">
+      <span class="resume-modal-title">resume — Fedotov-Danil-CV.pdf</span>
+      <div class="resume-modal-actions">
+        <a class="resume-btn" href="resume/Fedotov-Danil-CV.docx" download>⬇ .docx</a>
+        <a class="resume-btn" href="resume/Fedotov-Danil-CV.pdf" target="_blank" rel="noopener">↗ новая вкладка</a>
+        <button class="resume-modal-close" id="resume-modal-close" type="button">✕</button>
+      </div>
+    </div>
+    <div class="resume-modal-body">
+      <iframe id="resume-iframe" src="" title="Резюме Федотов Данил" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
 
 <hr class="div">
 
@@ -631,45 +731,63 @@ footer{
     <div class="pgrid">
 
       <div class="proj featured rev"><div class="pin"><div class="pnum">01</div><div>
-        <div class="ptitle">SpyVPN Bot</div>
-        <div class="pdesc">Коммерческий Telegram-бот для продажи VPN-подписок с 50+ активными пользователями. Платёжный пайплайн (CryptoBot, LAVA, LolzTeam), автопровизионинг на 3X-UI/Xray, протокол VLESS+Reality. Промокоды, поблочная тарификация, полная админ-панель.</div>
-        <div class="ptags"><span class="tag hi">Python</span><span class="tag hi">aiogram 3.x</span><span class="tag">SQLAlchemy</span><span class="tag">APScheduler</span><span class="tag">VLESS+Reality</span><span class="tag">3X-UI</span></div>
-      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://t.me/spyBestVPN" target="_blank" class="pl" title="Telegram">✈</a></div></div></div></div>
+        <div class="ptitle">SpyVPN — персональный VPN-сервис</div>
+        <div class="pdesc">Собственный VPN-сервис с веб-сайтом, Telegram-ботом и личным кабинетом. Платёжные API (Platega, CryptoBot), автопровизионинг ключей через 3x-ui, реферальная система, пополнение баланса, полная логика от оплаты до подключения клиента.</div>
+        <div class="ptags"><span class="tag hi">Python</span><span class="tag hi">HTML/CSS/JS</span><span class="tag">PostgreSQL</span><span class="tag">3x-ui</span><span class="tag">Platega</span><span class="tag">CryptoBot</span></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-site.shop/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a><a href="https://t.me/spyvpn_bot" target="_blank" rel="noopener" class="pl" title="Telegram-бот">✈</a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">02</div><div>
-        <div class="ptitle">Spy — Multiplayer Web Game</div>
-        <div class="pdesc">Браузерная мультиплеерная игра — игроки получают секретные роли, один из них шпион. Через вопросы нужно его вычислить. Система комнат, раздача ролей, реалтайм-геймплей. Задеплоен на Render.</div>
-        <div class="ptags"><span class="tag hi">JavaScript</span><span class="tag hi">HTML/CSS</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
-      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-nlyx.onrender.com/" target="_blank" class="pl">↗</a><a href="https://github.com/harrrdie/spy" target="_blank" class="pl">⌥</a></div></div></div></div>
+        <div class="ptitle">Сайт автошколы ДОСААФ (Еманжелинск)</div>
+        <div class="pdesc">Многостраничный сайт (11 страниц) с онлайн-записью, разделом обязательного раскрытия информации по требованиям Рособрнадзора, SEO, доступностью, Яндекс.Картами, формой заявки с маской телефона и слайдером отзывов.</div>
+        <div class="ptags"><span class="tag hi">React</span><span class="tag hi">TypeScript</span><span class="tag">React Router</span><span class="tag">Framer Motion</span><span class="tag">Яндекс.Карты</span></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://dosaaf-eman174.ru/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">03</div><div>
-        <div class="ptitle">Garbage Containers Map</div>
-        <div class="pdesc">Веб-приложение с интерактивной картой мусорных контейнеров. Поиск ближайших точек, фильтрация по типу отходов, добавление контейнеров пользователями. Геоинформационная визуализация.</div>
-        <div class="ptags"><span class="tag hi">JavaScript</span><span class="tag hi">HTML/CSS</span><span class="tag">Maps API</span><span class="tag">GeoJSON</span></div>
-      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/garbage-containers-on-the-map" target="_blank" class="pl">⌥</a></div></div></div></div>
+        <div class="ptitle">Telegram-бот интернет-магазин</div>
+        <div class="pdesc">Бот-витрина цифровых товаров: каталог с категориями, баланс, промокоды, система возвратов, полноценная админ-панель (товары, пользователи, рассылки, статистика). FSM-сценарии на aiogram.</div>
+        <div class="ptags"><span class="tag hi">Python</span><span class="tag hi">aiogram</span><span class="tag">SQLite</span><span class="tag">asyncio</span><span class="tag">FSM</span></div>
+      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/shop-tg-bot/" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
 
       <div class="proj rev"><div class="pin"><div class="pnum">04</div><div>
+        <div class="ptitle">Онлайн-игра «Угадай шпиона»</div>
+        <div class="pdesc">Многопользовательская браузерная игра с комнатами, ролями и чатом в реальном времени. Раздача ролей, таймер, голосование. Сервер на Node.js + Express + Socket.io, данные в SQLite.</div>
+        <div class="ptags"><span class="tag hi">Node.js</span><span class="tag hi">Express</span><span class="tag">Socket.io</span><span class="tag">SQLite</span><span class="tag">HTML/CSS/JS</span></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://spy-nlyx.onrender.com/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a></div></div></div></div>
+
+      <div class="proj rev"><div class="pin"><div class="pnum">05</div><div>
+        <div class="ptitle">Карта мусорных контейнеров + AI</div>
+        <div class="pdesc">Веб-приложение для управления отходами: интерактивная карта Leaflet, генерация оптимальных точек через Gemini AI, маршруты вывоза, чат-помощник, экспорт в Excel. Адаптивный UI со стеклянными эффектами.</div>
+        <div class="ptags"><span class="tag hi">Node.js</span><span class="tag">Express</span><span class="tag">Gemini AI</span><span class="tag">Leaflet.js</span><span class="tag">XLSX</span></div>
+      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/garbage-containers-on-the-map" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
+
+      <div class="proj rev"><div class="pin"><div class="pnum">06</div><div>
+        <div class="ptitle">ToDo with AI / Team Planner</div>
+        <div class="pdesc">Веб-приложение для командного управления проектами: JWT-аутентификация, ролевая модель (работодатель/работник), древовидный AI Planner через OpenRouter, оценка трудоёмкости, личные кабинеты с аватарами.</div>
+        <div class="ptags"><span class="tag hi">Node.js</span><span class="tag">Express</span><span class="tag">JWT</span><span class="tag">OpenRouter</span><span class="tag">Vanilla JS</span></div>
+      </div><div class="pright"><span class="badge live">● Live</span><div class="plinks"><a href="https://todo-with-ai-o1ll.onrender.com/" target="_blank" rel="noopener" class="pl" title="Сайт">↗</a><a href="https://github.com/harrrdie/todo-with-ai" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
+
+      <div class="proj rev"><div class="pin"><div class="pnum">07</div><div>
         <div class="ptitle">FPC AutoSteamPoints Plugin</div>
         <div class="pdesc">Плагин для FunPay Cardinal. Следит за балансом Steam Points, автоматически покупает предметы и обрабатывает очереди без ручного участия. Используется реальными пользователями FunPay.</div>
         <div class="ptags"><span class="tag hi">Python</span><span class="tag">FunPay Cardinal</span><span class="tag">Steam API</span><span class="tag">Automation</span></div>
-      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/fpc-autosteampoints-plugin" target="_blank" class="pl">⌥</a></div></div></div></div>
+      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/fpc-autosteampoints-plugin" target="_blank" rel="noopener" class="pl" title="GitHub">⌥</a></div></div></div></div>
 
-      <div class="proj rev"><div class="pin"><div class="pnum">05</div><div>
-        <div class="ptitle">Shop Telegram Bot</div>
-        <div class="pdesc">Telegram-магазин с каталогом, корзиной и пошаговым оформлением заказов на FSM. Интеграция оплаты, панель для продавца — добавление товаров, управление заказами.</div>
-        <div class="ptags"><span class="tag hi">Python</span><span class="tag hi">aiogram</span><span class="tag">SQLite</span><span class="tag">FSM</span></div>
-      </div><div class="pright"><span class="badge done">● Done</span><div class="plinks"><a href="https://github.com/harrrdie/shop-tg-bot" target="_blank" class="pl">⌥</a></div></div></div></div>
-
-      <div class="proj rev"><div class="pin"><div class="pnum">06</div><div>
-        <div class="ptitle">ИС для кондитерской фабрики</div>
-        <div class="pdesc">Информационная система учёта на кондитерском предприятии. Управление ассортиментом, складскими остатками, заказами и поставщиками. WPF + MVVM + SQL Server.</div>
-        <div class="ptags"><span class="tag hi">C#</span><span class="tag hi">WPF</span><span class="tag">XAML</span><span class="tag">MVVM</span><span class="tag">SQL Server</span></div>
+      <div class="proj rev"><div class="pin"><div class="pnum">08</div><div>
+        <div class="ptitle">Калькулятор стоимости стеклопакетов</div>
+        <div class="pdesc">Desktop-приложение для расчёта стоимости заказов на производстве. Формы ввода параметров и автоматический расчёт цены.</div>
+        <div class="ptags"><span class="tag hi">C#</span><span class="tag hi">WPF</span><span class="tag">XAML</span></div>
       </div><div class="pright"><span class="badge done">● Done</span></div></div></div>
 
-      <div class="proj rev"><div class="pin"><div class="pnum">07</div><div>
+      <div class="proj rev"><div class="pin"><div class="pnum">09</div><div>
+        <div class="ptitle">ИС для кондитерской фабрики</div>
+        <div class="pdesc">Информационная система учёта производства и заказов. Desktop-приложение с интерфейсом для работы с данными и формирования отчётов.</div>
+        <div class="ptags"><span class="tag hi">C#</span><span class="tag hi">WPF</span><span class="tag">XAML</span><span class="tag">SQLite</span></div>
+      </div><div class="pright"><span class="badge done">● Done</span></div></div></div>
+
+      <div class="proj rev"><div class="pin"><div class="pnum">10</div><div>
         <div class="ptitle">АИС «Канцтовары»</div>
-        <div class="pdesc">Автоматизированная ИС для магазина канцтоваров на 1С:Предприятие. Учёт товаров, продаж, поставок и остатков. Справочники номенклатуры, контрагентов, отчёты по движению товаров.</div>
-        <div class="ptags"><span class="tag hi">1С</span><span class="tag">1С:Предприятие</span><span class="tag">Конфигуратор</span></div>
+        <div class="pdesc">Автоматизированная ИС на базе 1С:Предприятие. Учёт товаров, продаж и остатков, отчёты и журналы операций.</div>
+        <div class="ptags"><span class="tag hi">1С</span><span class="tag">1С:Предприятие</span><span class="tag">Встроенный язык 1С</span></div>
       </div><div class="pright"><span class="badge done">● Done</span></div></div></div>
 
     </div>
@@ -684,12 +802,12 @@ footer{
     <h2 class="stitle rev">Каналы &amp; <em>боты</em></h2>
     <p class="ssub rev">Проекты в Telegram — от VPN-сервиса до игровых сообществ Supercell.</p>
     <div class="tgg">
-      <a href="https://t.me/spyBestVPN" target="_blank" class="tgc rev"><div class="tgico">🔐</div><div class="tgname">SpyVPN</div><div class="tghandle">@spyBestVPN</div></a>
-      <a href="http://t.me/clashroyalespy" target="_blank" class="tgc rev"><div class="tgico">⚔️</div><div class="tgname">Clash Royale Spy</div><div class="tghandle">@clashroyalespy</div></a>
-      <a href="http://t.me/supercellSpyGame" target="_blank" class="tgc rev"><div class="tgico">🎮</div><div class="tgname">Supercell Spy Game</div><div class="tghandle">@supercellSpyGame</div></a>
-      <a href="https://t.me/clashroyalespychat" target="_blank" class="tgc rev"><div class="tgico">💬</div><div class="tgname">CR Spy Chat</div><div class="tghandle">@clashroyalespychat</div></a>
-      <a href="https://t.me/brawlstars_spy" target="_blank" class="tgc rev"><div class="tgico">⭐</div><div class="tgname">Brawl Stars Spy</div><div class="tghandle">@brawlstars_spy</div></a>
-      <a href="https://t.me/brawlstars_spy_chat" target="_blank" class="tgc rev"><div class="tgico">🌟</div><div class="tgname">BS Spy Chat</div><div class="tghandle">@brawlstars_spy_chat</div></a>
+      <a href="https://t.me/spyvpn_bot" target="_blank" rel="noopener" class="tgc rev"><div class="tgico">◆</div><div class="tgname">SpyVPN</div><div class="tghandle">@spyvpn_bot</div></a>
+      <a href="https://t.me/clashroyalespy" target="_blank" rel="noopener" class="tgc rev"><div class="tgico">◇</div><div class="tgname">Clash Royale Spy</div><div class="tghandle">@clashroyalespy</div></a>
+      <a href="https://t.me/supercellSpyGame" target="_blank" rel="noopener" class="tgc rev"><div class="tgico">▣</div><div class="tgname">Supercell Spy Game</div><div class="tghandle">@supercellSpyGame</div></a>
+      <a href="https://t.me/clashroyalespychat" target="_blank" rel="noopener" class="tgc rev"><div class="tgico">◈</div><div class="tgname">CR Spy Chat</div><div class="tghandle">@clashroyalespychat</div></a>
+      <a href="https://t.me/brawlstars_spy" target="_blank" rel="noopener" class="tgc rev"><div class="tgico">✦</div><div class="tgname">Brawl Stars Spy</div><div class="tghandle">@brawlstars_spy</div></a>
+      <a href="https://t.me/brawlstars_spy_chat" target="_blank" rel="noopener" class="tgc rev"><div class="tgico">✧</div><div class="tgname">BS Spy Chat</div><div class="tghandle">@brawlstars_spy_chat</div></a>
     </div>
   </div>
 </section>
@@ -812,116 +930,159 @@ footer{
   });
 })();
 
-// ── BACKGROUND ──────────────────────────────────────────
+// ── BACKGROUND — generative flow field ───────────────────
+// Silk-like threads drifting along a Perlin noise vector field,
+// over slowly breathing aurora blobs. No grid, no static gradient —
+// every frame is a unique, living composition.
 (function(){
   const canvas=document.getElementById('bg-canvas');
   if(!canvas) return;
   const ctx=canvas.getContext('2d');
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile=window.matchMedia('(max-width:768px)').matches;
-  const GLYPHS=['{','}','//','=>','fn','*','#','0','1','</>','&&','::'];
-  let W=0,H=0,dpr=1,stars=[],glyphs=[],t=0;
+  let W=0,H=0,dpr=1,t=0,threads=[],rafId=null;
 
   function isLight(){ return document.body.classList.contains('light'); }
 
-  function makeStar(){
-    const light=isLight();
-    const hues=light?['#4f46e5','#0d9488','#64748b']:['#7c8cff','#5eead4','#ff8fab','#c8cce8'];
+  // ---- tiny seeded 2D gradient noise (classic Perlin, public-domain approach) ----
+  const perm=new Uint8Array(512);
+  (function seedPerm(){
+    const p=new Uint8Array(256);
+    for(let i=0;i<256;i++) p[i]=i;
+    let s=90210;
+    const rnd=()=>{ s=(s*1103515245+12345)&0x7fffffff; return s/0x7fffffff; };
+    for(let i=255;i>0;i--){
+      const j=(rnd()*(i+1))|0;
+      const tmp=p[i]; p[i]=p[j]; p[j]=tmp;
+    }
+    for(let i=0;i<512;i++) perm[i]=p[i&255];
+  })();
+  function fade(x){ return x*x*x*(x*(x*6-15)+10); }
+  function lerp(a,b,x){ return a+x*(b-a); }
+  function grad(hash,x,y){
+    const h=hash&7, u=h<4?x:y, v=h<4?y:x;
+    return ((h&1)?-u:u)+((h&2)?-2*v:2*v);
+  }
+  function noise2(x,y){
+    const X=Math.floor(x)&255, Y=Math.floor(y)&255;
+    x-=Math.floor(x); y-=Math.floor(y);
+    const u=fade(x), v=fade(y);
+    const aa=perm[perm[X]+Y], ab=perm[perm[X]+Y+1], ba=perm[perm[X+1]+Y], bb=perm[perm[X+1]+Y+1];
+    return lerp(lerp(grad(aa,x,y),grad(ba,x-1,y),u), lerp(grad(ab,x,y-1),grad(bb,x-1,y-1),u), v);
+  }
+
+  function palette(){
+    return isLight()
+      ? ['#4f46e5','#0d9488','#e11d48','#d97706','#059669']
+      : ['#7c8cff','#5eead4','#ff8fab','#fcd34d','#6ee7a8'];
+  }
+
+  function makeThread(spawnAnywhere){
     return {
       x:Math.random()*W,
-      y:Math.random()*H,
-      r:.6+Math.random()*2.2,
-      vx:(Math.random()-.5)*.12,
-      vy:(Math.random()-.5)*.12,
-      color:hues[Math.random()*hues.length|0],
-      a:light?.12+Math.random()*.18:.18+Math.random()*.28,
-      pulse:Math.random()*Math.PI*2,
+      y:spawnAnywhere?Math.random()*H:Math.random()*H,
+      age:0,
+      maxAge:90+Math.random()*180,
+      pIdx:(Math.random()*5)|0,
+      speed:.5+Math.random()*1.1,
+      wide:.6+Math.random()*1.1,
     };
   }
 
-  function makeGlyph(){
+  const blobs=[
+    {pIdx:0,rx:.32,ry:.28,r:.42,sx:.13,sy:.09,ph:0},
+    {pIdx:2,rx:.72,ry:.62,r:.38,sx:.10,sy:.14,ph:2.1},
+    {pIdx:1,rx:.55,ry:.85,r:.34,sx:.08,sy:.11,ph:4.2},
+  ];
+
+  function drawBlobs(){
+    const pal=palette();
     const light=isLight();
-    const hues=light?['#4f46e5','#0d9488','#64748b']:['#7c8cff','#5eead4','#ff8fab'];
-    return {
-      x:Math.random()*W,
-      y:H+Math.random()*120,
-      text:GLYPHS[Math.random()*GLYPHS.length|0],
-      size:11+Math.random()*9,
-      speed:.35+Math.random()*.55,
-      sway:Math.random()*Math.PI*2,
-      color:hues[Math.random()*hues.length|0],
-      a:light?.1+Math.random()*.12:.14+Math.random()*.16,
-      rot:(Math.random()-.5)*.4,
-    };
+    blobs.forEach(b=>{
+      const cx=(b.rx+Math.sin(t*b.sx+b.ph)*.12)*W;
+      const cy=(b.ry+Math.cos(t*b.sy+b.ph)*.12)*H;
+      const rad=Math.max(W,H)*b.r;
+      const g=ctx.createRadialGradient(cx,cy,0,cx,cy,rad);
+      const col=pal[b.pIdx];
+      g.addColorStop(0, col+(light?'18':'14'));
+      g.addColorStop(1, col+'00');
+      ctx.fillStyle=g;
+      ctx.fillRect(0,0,W,H);
+    });
   }
 
   function resize(){
     dpr=Math.min(devicePixelRatio||1,2);
-    W=innerWidth;
-    H=innerHeight;
+    W=innerWidth; H=innerHeight;
     canvas.width=Math.floor(W*dpr);
     canvas.height=Math.floor(H*dpr);
     canvas.style.width=W+'px';
     canvas.style.height=H+'px';
     ctx.setTransform(dpr,0,0,dpr,0,0);
-    const starCount=reduced?0:isMobile?40:90;
-    const glyphCount=reduced?0:isMobile?10:22;
-    stars=Array.from({length:starCount},makeStar);
-    glyphs=Array.from({length:glyphCount},()=>{const g=makeGlyph();g.y=Math.random()*H;return g;});
-  }
-
-  function drawStar(s){
-    const flicker=.55+.45*Math.sin(t*.9+s.pulse);
-    ctx.beginPath();
-    ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
-    ctx.fillStyle=s.color;
-    ctx.globalAlpha=s.a*flicker;
-    ctx.fill();
-    if(s.r>1.4){
-      ctx.globalAlpha=s.a*flicker*.35;
-      ctx.beginPath();
-      ctx.arc(s.x,s.y,s.r*3.2,0,Math.PI*2);
-      ctx.fill();
-    }
-  }
-
-  function draw(){
-    if(reduced){ctx.clearRect(0,0,W,H);return;}
-    t+=.016;
     ctx.clearRect(0,0,W,H);
+    const count=reduced?0:isMobile?70:150;
+    threads=Array.from({length:count},()=>makeThread(true));
+  }
 
-    stars.forEach(s=>{
-      s.x+=s.vx; s.y+=s.vy;
-      if(s.x<-4)s.x=W+4; else if(s.x>W+4)s.x=-4;
-      if(s.y<-4)s.y=H+4; else if(s.y>H+4)s.y=-4;
-      drawStar(s);
-    });
+  const SCALE=.0016;
 
-    ctx.textBaseline='middle';
-    glyphs.forEach(g=>{
-      g.y-=g.speed;
-      g.x+=Math.sin(t*.6+g.sway)*.35;
-      if(g.y<-30){
-        Object.assign(g,makeGlyph());
-        g.y=H+16;
+  function step(){
+    const pal=palette();
+    const light=isLight();
+
+    // fade previous frame slightly → trailing streaks (stable exponential fade)
+    ctx.globalCompositeOperation='source-over';
+    ctx.fillStyle=light?'rgba(244,242,237,.05)':'rgba(4,5,9,.07)';
+    ctx.fillRect(0,0,W,H);
+
+    drawBlobs();
+
+    ctx.globalCompositeOperation=light?'source-over':'lighter';
+    ctx.lineCap='round';
+
+    threads.forEach(p=>{
+      const px=p.x, py=p.y;
+      const angle=noise2(p.x*SCALE+t*.05, p.y*SCALE-t*.035)*Math.PI*4;
+      p.x+=Math.cos(angle)*p.speed;
+      p.y+=Math.sin(angle)*p.speed;
+      p.age++;
+
+      const fadeIn=Math.min(1,p.age/14);
+      const fadeOut=Math.min(1,(p.maxAge-p.age)/30);
+      const a=Math.max(0,Math.min(fadeIn,fadeOut))*(light?.32:.28);
+
+      if(a>0.003){
+        ctx.beginPath();
+        ctx.moveTo(px,py);
+        ctx.lineTo(p.x,p.y);
+        ctx.strokeStyle=pal[p.pIdx];
+        ctx.globalAlpha=a;
+        ctx.lineWidth=p.wide;
+        ctx.stroke();
       }
-      ctx.save();
-      ctx.translate(g.x,g.y);
-      ctx.rotate(g.rot);
-      ctx.font=`500 ${g.size}px "IBM Plex Mono",monospace`;
-      ctx.fillStyle=g.color;
-      ctx.globalAlpha=g.a*(.75+.25*Math.sin(t+g.sway));
-      ctx.fillText(g.text,0,0);
-      ctx.restore();
+
+      if(p.age>=p.maxAge || p.x<-30||p.x>W+30||p.y<-30||p.y>H+30){
+        Object.assign(p, makeThread(false), {x:Math.random()*W, y:Math.random()*H});
+      }
     });
 
     ctx.globalAlpha=1;
-    requestAnimationFrame(draw);
+    ctx.globalCompositeOperation='source-over';
+    t+=.016;
+    rafId=requestAnimationFrame(step);
   }
 
   window.addEventListener('resize',resize,{passive:true});
   resize();
-  if(!reduced) draw();
+
+  if(reduced){
+    // single static, gentle composition — no motion for reduced-motion users
+    ctx.fillStyle=isLight()?'#f4f2ed':'#050608';
+    ctx.fillRect(0,0,W,H);
+    drawBlobs();
+  } else {
+    step();
+  }
 })();
 
 // ── CURSOR ──────────────────────────────────────────────
@@ -941,12 +1102,35 @@ function openDrawer(){burger.classList.add('open');drawer.classList.add('open');
 burger.addEventListener('click',()=>drawer.classList.contains('open')?closeDrawer():openDrawer());
 ndClose.addEventListener('click',closeDrawer);
 
+// ── RESUME MODAL ────────────────────────────────────────
+const resumeOverlay=document.getElementById('resume-modal-overlay');
+const resumeIframe=document.getElementById('resume-iframe');
+const RESUME_PDF='resume/Fedotov-Danil-CV.pdf';
+function openResumeModal(){
+  // file:// protocol blocks iframe PDF (browser security) — open in new tab instead
+  if(location.protocol === 'file:'){
+    window.open(RESUME_PDF, '_blank', 'noopener');
+    return;
+  }
+  if(!resumeIframe.getAttribute('src')) resumeIframe.src = RESUME_PDF;
+  resumeOverlay.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeResumeModal(){
+  resumeOverlay.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('resume-open-btn').addEventListener('click',openResumeModal);
+document.getElementById('resume-modal-close').addEventListener('click',closeResumeModal);
+resumeOverlay.addEventListener('click',e=>{ if(e.target===resumeOverlay) closeResumeModal(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeResumeModal(); });
+
 // ── TERMINAL ────────────────────────────────────────────
 (function(){
   const out=document.getElementById('term-output');
   const inp=document.getElementById('term-input');
   const hint=document.getElementById('term-hint');
-  const CMDS=['help','about','skills','projects','contact','github','telegram','clear'];
+  const CMDS=['help','about','skills','resume','projects','contact','github','telegram','clear'];
 
   const DB={
     help:()=>[
@@ -954,6 +1138,7 @@ ndClose.addEventListener('click',closeDrawer);
       {c:'hi', v:'  help       — список команд'},
       {c:'hi', v:'  about      — обо мне'},
       {c:'hi', v:'  skills     — стек технологий'},
+      {c:'hi', v:'  resume     — открыть резюме'},
       {c:'hi', v:'  projects   — мои проекты'},
       {c:'hi', v:'  contact    — контакты'},
       {c:'hi', v:'  github     — GitHub профиль'},
@@ -972,22 +1157,25 @@ ndClose.addEventListener('click',closeDrawer);
     skills:()=>[
       {c:'ok', v:'── stack ──────────────────────'},
       {c:'acc',v:'  Языки:'},
-      {c:'hi', v:'  Python · HTML · CSS · JS · C# · 1С'},
+      {c:'hi', v:'  Python · HTML · CSS · JS · TS · C# · 1С'},
       {c:'acc',v:'  Фреймворки:'},
-      {c:'hi', v:'  aiogram · SQLAlchemy · FastAPI · WPF'},
+      {c:'hi', v:'  aiogram · React · Node/Express · Socket.io · WPF'},
       {c:'acc',v:'  Инфра:'},
-      {c:'hi', v:'  Linux · Docker · Git · 3X-UI · REST'},
+      {c:'hi', v:'  Linux · Docker · Git · 3X-UI · PostgreSQL · REST'},
       {c:'ok', v:'───────────────────────────────'},
     ],
     projects:()=>[
-      {c:'ok', v:'── projects (7) ───────────────'},
-      {c:'hi', v:'  01  SpyVPN Bot          Python/aiogram'},
-      {c:'hi', v:'  02  Spy Game            JS/PHP'},
-      {c:'hi', v:'  03  Garbage Map         JS/Maps API'},
-      {c:'hi', v:'  04  FPC SteamPoints     Python'},
-      {c:'hi', v:'  05  Shop Bot            Python/aiogram'},
-      {c:'hi', v:'  06  ИС кондитерской     C#/WPF'},
-      {c:'hi', v:'  07  АИС Канцтовары      1С'},
+      {c:'ok', v:'── projects (10) ──────────────'},
+      {c:'hi', v:'  01  SpyVPN              Python/3x-ui'},
+      {c:'hi', v:'  02  Автошкола ДОСААФ    React/TS'},
+      {c:'hi', v:'  03  Shop Bot            Python/aiogram'},
+      {c:'hi', v:'  04  Угадай шпиона       Node/Socket.io'},
+      {c:'hi', v:'  05  Карта контейнеров   Node/Gemini/Leaflet'},
+      {c:'hi', v:'  06  Team Planner AI     Node/JWT'},
+      {c:'hi', v:'  07  FPC SteamPoints     Python'},
+      {c:'hi', v:'  08  Калькулятор стёкол   C#/WPF'},
+      {c:'hi', v:'  09  ИС кондитерской     C#/WPF'},
+      {c:'hi', v:'  10  АИС Канцтовары      1С'},
       {c:'',   v:''},
       {c:'lnk',v:'  <a href="#projects">↓ смотреть все проекты</a>'},
       {c:'ok', v:'───────────────────────────────'},
@@ -998,6 +1186,15 @@ ndClose.addEventListener('click',closeDrawer);
       {c:'lnk',v:'  GH:  <a href="https://github.com/harrrdie" target="_blank">github.com/harrrdie</a>'},
       {c:'ok', v:'───────────────────────────────'},
     ],
+    resume:()=>{
+      setTimeout(()=>{ if(typeof openResumeModal==='function') openResumeModal(); },300);
+      return [
+        {c:'ok', v:'── resume ─────────────────────'},
+        {c:'hi', v:'  открываю Fedotov-Danil-CV.pdf...'},
+        {c:'lnk',v:'  <a href="resume/Fedotov-Danil-CV.docx" download>⬇ или скачай .docx</a>'},
+        {c:'ok', v:'───────────────────────────────'},
+      ];
+    },
     github:()=>[{c:'lnk',v:'  → <a href="https://github.com/harrrdie" target="_blank">github.com/harrrdie</a>'}],
     telegram:()=>[{c:'lnk',v:'  → <a href="https://t.me/pr0cr4st1n4t10n" target="_blank">t.me/pr0cr4st1n4t10n</a>'}],
   };
@@ -1056,7 +1253,7 @@ ndClose.addEventListener('click',closeDrawer);
   // autorun on load
   setTimeout(()=>{
     run('about');
-    setTimeout(()=>addLine('acc','Попробуй: help · skills · projects · contact'),600);
+    setTimeout(()=>addLine('acc','Попробуй: help · skills · resume · projects · contact'),600);
   },800);
 })();
 
